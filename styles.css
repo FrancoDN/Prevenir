@@ -126,3 +126,7 @@
     text-align: center;
     font-size: 15px;
 }
+.banner{
+    width: 100%;
+    max-width: 800px;
+}
