@@ -5,35 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet href styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="../styles.css"/>
     <title>Registro Prevenir</title>
 </head>
 
 <body>
-    <div class="centerForm">
-        <form id="loginform" autocomplete="off">
-            <h1>INGRESO</h1>
+        <img id="bannerWeb" src="../assets/images/Web/head_web.png" width="100%" height="100%"></img>
 
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
-                </div>
-                <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
+        <script type="text/javascript">
+            function bannerPhone(){
+                document.getElementById('bannerWeb');
+                    if(screen.width <= 400) {
+                }  
+            }
+        </script>
+
+        <div class="container">
+            <div >
+                <a><input type="text" class="loginField"></a>
             </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
-                </div>
-                <input required type="number" id="dni" name="dni" class="form-control" placeholder="DNI">
-            </div>
-
-            <button type="submit" class="btn btn-primary">INGRESAR</button>
-        </form>
-    </div>
-
-
+        </div>
 
 
 
@@ -43,7 +35,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
     <script src="login.js"></script>
-    <script src="styles.css"></script>
+    <script src="../styles.css"></script>
 </body>
 
 </html>
