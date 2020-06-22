@@ -25,7 +25,7 @@ loginFormu.addEventListener('submit', (e) => {
     const email = loginFormu['email'].value;
     const dni = loginFormu['dni'].value;
 
-    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
+    firebase.auth().signInWithEmailAndPassword(email, getId('dni')).then(cred => {
         console.log(cred);
     })
 })
