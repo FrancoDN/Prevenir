@@ -7,33 +7,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <title>BOTONERA</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <img class="banner" src="../assets/images/Head chico.png" alt="berisso banner">
+    <img class="banner" src="../assets/images/Head_chico.png" alt="berisso banner" width="100%" height="100%">
+    
+    <table width="300" height="430" class="tabla">
+        <tbody>
+            &nbsp;
+            <tr>
+                <td><input type="button" alt="Sintomas" class="btnSintomas" onclick="location.href='../sintomas/sintomas.html'"></td>
+            </tr>
+            <tr>    
+                <td><input type="button" alt="Prevencion" class="btnPrevencion" onclick="location.href='../prevencion/prevencion.html'"></td>
+            </tr>
+            <tr>    
+                <td><input type="button" alt="Autochequeo" class="btnAutochequeo" onclick="location.href='../autochequeo/autochequeo.html'"></td>
+            </tr>
+            <tr>    
+                <td><input type="button" alt="Emergencia" class="btnEmergencia" onclick="location.href='../Numeros/numeros.html'"></td>
+            </tr>
+        </tbody>
+    </table>
+
     <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
     <script src="../iniciodb.js"></script>
 </body>
-<main>
-    <div class="container">
-        <div>
-            <a href="../Numeros/numeros.html"><img src="../assets/images/BOTONES/numeros.png" alt="Numeros de Emergencia" class="boton"></a>
-        </div>
-        <div>
-            <a href="../autochequeo/autochequeo.html"><img src="../assets/images/BOTONES/autochequeo.png" alt="Autochequeo" class="boton"></a>
-        </div>
-        <div>
-            <a href="../sintomas/sintomas.html"><img src="../assets/images/BOTONES/sintomas.png" alt="Sintomas" class="boton"></a>
-        </div>
-        <div>
-            <a href="../prevencion/prevencion.html"><img src="../assets/images/BOTONES/prevencion.png" alt="Prevencion" class="boton"></a>
-        </div>
-    </div>
-
-</main>
 
 </html>
