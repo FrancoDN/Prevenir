@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <form id="loginform" autocomplete="off">
+        
         <img id="bannerWeb" src="../assets/images/Web/head_web.png" width="100%" height="100%"></img>
 
         <script type="text/javascript">
@@ -21,11 +23,42 @@
             }
         </script>
 
-        <div class="container">
-            <div >
-                <a><input type="text" class="loginField"></a>
-            </div>
+      <div class="container">
+          <div>
+                <a><input type="email" class="loginField" id="email" alt="Email" placeholder="Email"></a>
         </div>
+
+          <div>
+                <a><input type="number" class="loginField" id="dni" alt="DNI" placeholder="DNI"></a>
+        </div>
+			
+      </div>
+
+        <table width="206" height="77" class="tabla">
+          <tbody>
+            <tr>
+              <td><input type="submit" alt="Ingreso" class="btnIngreso" value=""></div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <p class="text-center">¿No estás registrado?</p>
+        <br>
+        <table width="248" height="77" class="tabla">
+          <tbody>
+            <tr>
+              <td><input type="button" alt="Ingreso" class="btnRegistro" id="signUp" onclick="location.href='../signUp/signup.html'" ></div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!--TODO: Hay que hacer la pagina de términos y condiciones-->
+    
+        <p class="text-centered">Al registrarse está aceptando los <p class="text-centeredTerm"><b>Términos Y Condiciones.</b></p></p>
+   
+</form>
 
 
 
