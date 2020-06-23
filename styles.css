@@ -164,6 +164,12 @@
     border: transparent;
 }
 
+.btnAutochequeoFormu {
+    margin: 0;
+    width: 100%;
+    border-radius: 100px;
+}
+
 
 .text-centered {
     color: #989998;
@@ -185,4 +191,21 @@
 .banner{
     width: 100%;
     max-width: 800px;
+}
+
+.text-autochequeo {
+    color: #000000;
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat/);
+    margin: auto;
+    text-align: left;
+    font-size: 15px;
+}
+
+.text-autochequeoEsencial {
+    color: #1244e7;
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat/);
+    text-align: left;
+    font-size: 15px;
 }
