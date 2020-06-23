@@ -19,12 +19,79 @@
         </tr>
     </table>
 
-    <table width="300"height="50" class="tabla" style="background-color: #CFD6D2;">
+    <table width="320" height="50" class="tablaAutochequeo">
         <tr>
             <td>
-                <p class="text-autochequeo">¿Sos personal esencial o persona de riesgo?</p>
+                <p class="text-autochequeo">¿Sos <a style="color: #1244e7;"><u>personal esencial o persona de <br> riesgo</u></a>?</p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="EseRies" value="riesgoSi" id="riesgoSi" required> Sí</label><br>
+                    
+                    <label><input type="radio" name="EseRies" value="riesgoNo" id="riesgoNo" required> No</label><br>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-autochequeo">¿Tuviste o tenés contacto estrecho con algun caso confirmado de COVID-19?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="contacto" value="contacto_Si" id="contactoSi" required> Sí</label><br>
+                    
+                    <label><input type="radio" name="contacto" value="contacto_No" id="contactoSi" required> No</label><br>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-autochequeo">¿Presentas temperatura igual o mayor a <a style="color: #E15252;"><b>37.5°C</b></a> ?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="temperatura" value="temp_si" id="tempSi" required> Sí</label><br>
+                    
+                    <label><input type="radio" name="temperatura" value="temp_no" id="tempNo" required> No</label><br>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table width="320" height="50" class="tablaAutochequeo" style="margin-top: 5px;">
+        <tr>
+            <td>
+                <p class="text-autochequeo">Si presentas otros síntomas podes marcarlos a continuación.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="checkbox" name="garganta" value="sinto_garganta" id="gar"> Dolor de garganta</label><br>
+                    
+                    <label><input type="checkbox" name="respiratoria" value="sinto_respi" id="resp"> Dificultad respiratoria</label><br>
+
+                    <label><input type="checkbox" name="toser" value="sinto_tos" id="tos"> Tos</label><br>
+                    
+                    <label><input type="checkbox" name="gusOlf" value="sinto_gusOlf" id="gus"> Perdida de gusto/olfato</label><br>
+                </p>
+            </td>
+        </tr>
+    </table><br>
+
+    <table width="206" height="77" class="tabla">
+        <tbody>
+            <tr>
+                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar"></div>
+                </td>
+            </tr>
+        </tbody>
     </table>
     
 
