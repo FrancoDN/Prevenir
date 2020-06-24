@@ -45,15 +45,15 @@
     }
 }
 
-.container{
+.container {
     align-content: center;
     margin: auto;
     width: 90%;
     margin-top: 20px;
     max-width: 800px;
-  }
+}
 
-.loginField { 
+.loginField {
     width: 100%;
     height: 52px;
     margin-top: 6%;
@@ -64,10 +64,9 @@
     outline: 0;
     position: relative;
     padding-inline-start: 30px;
-    
-   }
+}
 
-   .loginFieldSignUp { 
+.loginFieldSignUp {
     width: 100%;
     height: 47px;
     margin-top: 6%;
@@ -78,20 +77,18 @@
     outline: 0;
     position: relative;
     padding-inline-start: 30px;
-    
-   }
+}
 
-.tabla{
+.tabla {
     margin: auto;
     border: 0;
 }
 
-.tablaAutochequeo{
+.tablaAutochequeo {
     margin: auto;
     border: 0;
     background-color: #CFD6D2;
     border-radius: 10px;
-    
 }
 
 .text-center {
@@ -102,7 +99,9 @@
     font-size: 15px;
 }
 
+
 /* Botones */
+
 .btnSignUp {
     margin: 0;
     background-image: url(./assets/images/Registro/ENVIAR.png);
@@ -131,7 +130,7 @@
     border: transparent;
 }
 
-.btnEnviar:hover{
+.btnEnviar:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -155,7 +154,7 @@
     border: transparent;
 }
 
-.btnIngreso:hover{
+.btnIngreso:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -176,9 +175,9 @@
     height: 70%;
     outline: none;
     border: none;
-    
 }
-.btnRegistro:hover{
+
+.btnRegistro:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -201,7 +200,8 @@
     outline: transparent;
     border: transparent;
 }
-.btnSintomas:hover{
+
+.btnSintomas:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -224,7 +224,8 @@
     outline: transparent;
     border: transparent;
 }
-.btnPrevencion:hover{
+
+.btnPrevencion:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -247,7 +248,8 @@
     outline: transparent;
     border: transparent;
 }
-.btnAutochequeo:hover{
+
+.btnAutochequeo:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -270,7 +272,8 @@
     outline: transparent;
     border: transparent;
 }
-.btnEmergencia:hover{
+
+.btnEmergencia:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
@@ -294,11 +297,11 @@
     border: transparent;
 }
 
-.btnSesion:hover{
+.btnSesion:hover {
     margin: 0;
     background-color: transparent;
     width: 100%;
-    height: 20%%;
+    height: 20%;
     border: none;
     outline: transparent;
     border: transparent;
@@ -309,7 +312,10 @@
     width: 100%;
     border-radius: 100px;
 }
+
+
 /* Botones */
+
 
 /* Bloques de texto */
 
@@ -361,14 +367,14 @@
     font-size: 15px;
     padding-inline-start: 5px
 }
+
+
 /* Bloques de texto */
 
-
-.banner{
+.banner {
     width: 100%;
     max-width: 800px;
 }
-
 
 .radiobtn {
     font-size: 15px;
@@ -377,6 +383,7 @@
     padding-inline-start: 15px;
     font-family: "Montserrat";
 }
-.backgroundcolor{
-    background-color:#ECECEC;
+
+.backgroundcolor {
+    background-color: #ECECEC;
 }

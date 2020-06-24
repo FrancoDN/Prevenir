@@ -4,7 +4,7 @@ var uid;
 
 regFormu.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const email = regFormu['email'].value;
     const dni = regFormu['dni'].value;
     const nombre = regFormu['nombre'].value;
@@ -15,22 +15,22 @@ regFormu.addEventListener('submit', (e) => {
         var uid;
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-    
+
                 uid = user.uid;
                 console.log(uid);
                 var data = { nombre, apellido, email, dni, direc, edad }
                 ref.child(uid).update(data);
-                window.open('/Users/franonano11/Desktop/Prevenir/login/login.html', "_self");
-                } else {
-                 window.alert("No se pudo cargar tu información, intentá nuevamente");
+                window.open('../login/login.html', "_self");
+            } else {
+                window.alert("No se pudo cargar tu información, intentá nuevamente");
             }
         });
-        
+
     });
 
-    
 
-    
+
+
 })
 
 

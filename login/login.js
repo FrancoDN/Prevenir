@@ -5,7 +5,7 @@ const loginFormu = document.getElementById('loginform');
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        window.open('file:///C:/workspace/Prevenir-develop/botonera/botonera.html', "_self");
+        window.open('../botonera/botonera.html', "_self");
     } else {}
 });
 
@@ -17,7 +17,7 @@ loginFormu.addEventListener('submit', (e) => {
     const email = loginFormu['email'].value;
     const dni = loginFormu['dni'].value;
 
-    firebase.auth().signInWithEmailAndPassword(email,dni).then(cred => {
+    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
         console.log(cred);
     }).catch(function(error) {
 

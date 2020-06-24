@@ -26,7 +26,7 @@ function CheckIdleTime() {
         // Cierra la sesion de firebase 
         firebase.auth().signOut().then(function() {
             alert("Sesión cerrada por inactividad");
-            window.open('file:///C:/workspace/Prevenir-develop/login/login.html', "_self");
+            window.open('../login/login.html', "_self");
         }).catch(function(error) {
             alert("Error");
         });
@@ -39,6 +39,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log('Estás logeado.');
     } else {
         alert("Debe autentificarse antes de acceder a esta página");
-        window.open('file:///C:/workspace/Prevenir-develop/Baja_prevenir/public/login.html', "_self");
+        window.open('../login/login.html', "_self");
     }
 });
