@@ -13,6 +13,12 @@ document.onkeypress = function() {
 };
 window.setInterval(CheckIdleTime, 1000);
 
+function cerrarsesion() {
+    firebase.auth().signOut();
+}
+
+
+
 function CheckIdleTime() {
     _idleSecondsCounter++;
     //console.log(_idleSecondsCounter);

@@ -280,6 +280,30 @@
     border: transparent;
 }
 
+.btnSesion {
+    margin: 0;
+    background-image: url(./assets/images/BOTONES/sesion.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 40%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnSesion:hover{
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 20%%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
 .btnAutochequeoFormu {
     margin: 0;
     width: 100%;

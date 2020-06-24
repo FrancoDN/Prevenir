@@ -28,9 +28,9 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="EseRies" value="riesgoSi" id="riesgoSi" required> Sí</label><br>
+                    <label><input type="radio" name="EseRies" value="Si" id="EseRies" required> Sí</label><br>
                     
-                    <label><input type="radio" name="EseRies" value="riesgoNo" id="riesgoNo" required> No</label><br>
+                    <label><input type="radio" name="EseRies" value="No" id="EseRies" required> No</label><br>
                 </p>
             </td>
         </tr>
@@ -42,9 +42,9 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="contacto" value="contacto_Si" id="contactoSi" required> Sí</label><br>
+                    <label><input type="radio" name="contacto" value="Si" id="contactoSi" required> Sí</label><br>
                     
-                    <label><input type="radio" name="contacto" value="contacto_No" id="contactoSi" required> No</label><br>
+                    <label><input type="radio" name="contacto" value="No" id="contactoNo" required> No</label><br>
                 </p>
             </td>
         </tr>
@@ -56,9 +56,9 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="temperatura" value="temp_si" id="tempSi" required> Sí</label><br>
+                    <label><input type="radio" name="temperatura" value="Si" id="tempSi" required> Sí</label><br>
                     
-                    <label><input type="radio" name="temperatura" value="temp_no" id="tempNo" required> No</label><br>
+                    <label><input type="radio" name="temperatura" value="No" id="tempNo" required> No</label><br>
                 </p>
             </td>
         </tr>
@@ -73,13 +73,13 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="checkbox" name="garganta" value="sinto_garganta" id="gar"> Dolor de garganta</label><br>
+                    <label><input type="checkbox" name="garganta" value="Si" id="gar"> Dolor de garganta</label><br>
                     
-                    <label><input type="checkbox" name="respiratoria" value="sinto_respi" id="resp"> Dificultad respiratoria</label><br>
+                    <label><input type="checkbox" name="respiratoria" value="Si" id="resp"> Dificultad respiratoria</label><br>
 
-                    <label><input type="checkbox" name="toser" value="sinto_tos" id="tos"> Tos</label><br>
+                    <label><input type="checkbox" name="toser" value="Si" id="tos"> Tos</label><br>
                     
-                    <label><input type="checkbox" name="gusOlf" value="sinto_gusOlf" id="gus"> Perdida de gusto/olfato</label><br>
+                    <label><input type="checkbox" name="gusOlf" value="Si" id="gus"> Perdida de gusto/olfato</label><br>
                 </p>
             </td>
         </tr>
@@ -88,14 +88,16 @@
     <table width="206" height="77" class="tabla">
         <tbody>
             <tr>
-                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar"></div>
+                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar" onclick="enviarform()"></div>
                 </td>
             </tr>
         </tbody>
     </table>
-    
 
-
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="../iniciodb.js"></script>
+    <script src="autochequeo.js"></script>
 </body>
 
 </html>

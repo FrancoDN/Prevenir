@@ -1,37 +1,36 @@
 const regFormu = document.querySelector('#regform');
+firebase.auth().signOut();
+var uid;
+
 regFormu.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
     const email = regFormu['email'].value;
     const dni = regFormu['dni'].value;
     const nombre = regFormu['nombre'].value;
     const apellido = regFormu['apellido'].value;
     const direc = regFormu['direc'].value;
     const edad = regFormu['edad'].value;
-
-    var data = { nombre, apellido, email, dni, direc, edad }
-    ref.child(dni).update(data);
-
     firebase.auth().createUserWithEmailAndPassword(email, dni).then(cred => {
-        console.log(cred.user);
-    });
+        var uid;
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
     
-    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
-        console.log(cred);
-    }).catch(function(error) {
-
-
-        var errorCode = error.code;
-
-        if (errorCode == 'auth/wrong-password' || email.value == null || dni.value == null) {
-            alert('Email o contraseña erroneos.');
-        } else if (errorCode != 'auth/wrong-password' && email.value != null && dni.value != null) {
-            alert('Usuario indentificado!');
-        }
-
-        regFormu.reset();
-
+                uid = user.uid;
+                console.log(uid);
+                var data = { nombre, apellido, email, dni, direc, edad }
+                ref.child(uid).update(data);
+                window.open('/Users/franonano11/Desktop/Prevenir/login/login.html', "_self");
+                } else {
+                 window.alert("No se pudo cargar tu información, intentá nuevamente");
+            }
+        });
+        
     });
+
+    
+
+    
 })
 
 
