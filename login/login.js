@@ -1,13 +1,6 @@
 //Login
 const loginFormu = document.getElementById('loginform');
 
-// Autentificacion al ingresar
-
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        window.open('../botonera/botonera.html', "_self");
-    } else {}
-});
 
 //Auth
 loginFormu.addEventListener('submit', (e) => {
