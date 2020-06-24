@@ -1,6 +1,7 @@
 //var data = {gustolf,riesgo,contacto};
 var Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato;
-var sintomas;
+var sintomas = 0;
+var Sospechoso = null;
 
 
 function enviarform() {
@@ -17,29 +18,37 @@ function enviarform() {
         });
 
     } else {
-        alert("Porfavor complete los campos...");
-        //TODO: ACÁ VAN LAS VALIDACIONES POR SI ALGUIEN TIENE GANAS DE HACERLAS EH!
+        if (!document.querySelector('input[name="EseRies"]:checked')) {
+            window.alert("Debe indicar si es personal esencial o persona de riesgo");
+        }
+    
+        if (!document.querySelector('input[name="contacto"]:checked')) {
+            window.alert("Debe indicar si tuvo o tiene contacto estrecho con algun caso confirmado de COVID-19");
+            
+        }
+        if (!document.querySelector('input[name="temperatura"]:checked')) {
+            window.alert("Debe indicar si presenta temperatura mayor a 37.5°C");
+            
+        } 
     }
 }
 
 
 function llenardatos() {
-    if (document.querySelector('input[name="EseRies"]:checked').value !== null) {
+
+    if (document.querySelector('input[name="EseRies"]:checked')) {
         Personal_Esencial = document.querySelector('input[name="EseRies"]:checked').value;
-    } else {
-        errorSpan.innerHTML = "* You must pick a flavor.";
-        return false;
     }
 
-    if (document.querySelector('input[name="contacto"]:checked').value !== null) {
+    if (document.querySelector('input[name="contacto"]:checked')) {
         Contacto_estrecho = document.querySelector('input[name="contacto"]:checked').value;
     }
     if (document.querySelector('input[name="temperatura"]:checked')) {
-        Fiebre = "Si";
-        sintomas++;
-    } else if (document.querySelector('input[name="contacto"]:checked').value !== null) {
-        Fiebre = document.querySelector('input[name="contacto"]:checked').value;
-    }
+        Fiebre = document.querySelector('input[name="temperatura"]:checked').value;
+        if(Fiebre == "Si"){
+            sintomas++;
+        }        
+    } 
 
     if (document.querySelector('input[name="garganta"]:checked')) {
         Dolor_de_garganta = "Si";
@@ -65,22 +74,26 @@ function llenardatos() {
     } else {
         Perdida_gusto_olfato = "No";
     }
-    /*
-        if (Contacto_estrecho = "Si" && sintomas >= 1) {
-            Sospechoso = "Si";
-        } else if (Personal_Esencial = "Si" && sintomas >= 2) {
-            Sospechoso = "Si";
-        } else if (Fiebre = "Si" && sintomas >= 2) {
-            Sospechoso = "Si";
-        } else if (Personal_Esencial = "Si" && sintomas <= 1) {
-            Sospechoso = "No";
-        } else if (Personal_Esencial = "No", Fiebre = "No", Contacto_estrecho = "No" && sintomas == 4) {
-            Sospechoso = "Si";
-        } else if (Personal_Esencial = "No" && sintomas <= 1) {
-            Sospechoso = "No";
-        } else if (Personal_Esencial = "No", Contacto_estrecho = "No", Fiebre = "No" && sintomas < 4) {
-            Sospechoso = "No";
-        }
-        Falta hacer
-        */
+
+    if (Contacto_estrecho === "Si" && sintomas >= 1) {
+        Sospechoso = "Si";
+    } else if (Personal_Esencial === "Si" && sintomas >= 2) {
+        Sospechoso = "Si";
+    } else if (Fiebre === "Si" && sintomas >= 2) {
+        Sospechoso = "Si";
+    } else if (Personal_Esencial === "Si" && sintomas <= 1) {
+        Sospechoso = "No";
+    } else if (Personal_Esencial === "No" && Fiebre === "No" && Contacto_estrecho === "No" && sintomas === 4) {
+        Sospechoso = "Si";
+    } else if (Personal_Esencial === "No" && sintomas <= 1) {
+        Sospechoso = "No";
+    } else if (Personal_Esencial === "No" && Contacto_estrecho === "No" && Fiebre === "No" && sintomas < 4) {
+        Sospechoso = "No";
+    }
+
+    console.log(sintomas);
+    console.log(Sospechoso);
+    
+
 }
+

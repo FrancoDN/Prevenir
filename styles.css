@@ -348,13 +348,13 @@
 
 .text-centeredSignUp {
     color: #000000;
+    font-weight: 450;
     font-family: "Montserrat";
-    src: url(./assets/fonts/Montserrat/Montserrat-Light.ttf);
+    src: url(./assets/fonts/Montserrat/Montserrat/);
     margin: auto;
-    text-align: center;
-    margin-left: 22px;
-    margin-right: 22px;
+    text-align: left;
     font-size: 15px;
+    padding-inline-start: 5px
 }
 
 .text-autochequeo {
