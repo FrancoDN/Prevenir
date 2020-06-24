@@ -18,7 +18,7 @@ function enviarform() {
 
     } else {
         alert("Porfavor complete los campos...");
-        //ACÁ VAN LAS VALIDACIONES POR SI ALGUIEN TIENE GANAS DE HACERLAS EH!
+        //TODO: ACÁ VAN LAS VALIDACIONES POR SI ALGUIEN TIENE GANAS DE HACERLAS EH!
     }
 }
 
