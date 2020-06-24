@@ -11,59 +11,47 @@
     <link rel="icon" href="../assets/images/Web/logo.png">
 </head>
 
-<body class="backgroundcolor">
-    <img class="banner" src="../assets/images/Head_chico.png" alt="berisso banner">
-    <div class="container" style="padding-top: 1%" ;>
+<body style="background-color:#ECECEC;">
+    <img class="banner" src="../assets/images/Head_chico.png" alt="berisso banner" width="100%" height="100%">
+    <table width="200"height="80" class="tabla">
+        <tr>
+            <td>
+                <img src="../assets/images/Registro/Datos personales.png" alt="AutochequeoFormu" class="btnAutochequeoFormu">
+            </td>
+        </tr>
+    </table>
+    <p class="text-centeredSignUp">Esto es un pre-diagnóstico medico. En caso de dudas, consultar a su medico de cabecera.</p>
+    <div class="container">
         <form id="regform" autocomplete="off">
-            <h1 style="font-size: min(7vw,36px); font-family: Arial, Helvetica, sans-serif;">Formulario de Registro</h1>
-
-
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+            <div class="container">
+                <div>
+                    <a><input required minlength="3" type="text" class="loginFieldSignUp" name="nombre" id="nombre" placeholder="Nombre"></a>
                 </div>
-                <input required type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+    
+                <div>
+                    <a><input requiered minlength="3" type="text" class="loginFieldSignUp" name="apellido" id="apellido" placeholder="Apellido"></a>
                 </div>
-                <input required type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+                <div>
+                    <a><input required type="email" id="email" name="email" class="loginFieldSignUp" placeholder="Email"></a>
                 </div>
-                <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+                <div>
+                    <a><input required type="number" id="dni" name="dni" class="loginFieldSignUp" placeholder="DNI" maxlength="8"></a>
                 </div>
-                <input required type="number" id="dni" name="dni" class="form-control" placeholder="DNI">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+                <div>
+                    <a><input required type="number" id="edad" name="edad" class="loginFieldSignUp" placeholder="Edad" maxlength="2"></a>
                 </div>
-                <input required type="number" id="edad" name="edad" class="form-control" placeholder="Edad">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="imput-group-prepend">
-                    <span class="imput-group-text"></span>
+                <div>
+                    <a><input required type="text" id="direc" name="direc" class="loginFieldSignUp" placeholder="Dirección"></a>
                 </div>
-                <input required type="text" id="direc" name="direc" class="form-control" placeholder="Dirección">
             </div>
-    </div>
-    <div style="display:flex; justify-content: center; padding-top: 5%;">
-        <button type="submit" class="btn btn-primary">REGISTRARSE</button>
-    </div>
+            <table width="150" height="77" class="tabla">
+                <tbody>
+                    <tr>
+                        <td><input type="submit" alt="Ingreso" class="btnSignUp" value=""></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </form>
 
 
