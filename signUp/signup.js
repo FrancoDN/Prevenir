@@ -15,6 +15,23 @@ regFormu.addEventListener('submit', (e) => {
     firebase.auth().createUserWithEmailAndPassword(email, dni).then(cred => {
         console.log(cred.user);
     });
+    
+    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
+        console.log(cred);
+    }).catch(function(error) {
+
+
+        var errorCode = error.code;
+
+        if (errorCode == 'auth/wrong-password' || email.value == null || dni.value == null) {
+            alert('Email o contraseña erroneos.');
+        } else if (errorCode != 'auth/wrong-password' && email.value != null && dni.value != null) {
+            alert('Usuario indentificado!');
+        }
+
+        regFormu.reset();
+
+    });
 })
 
 
