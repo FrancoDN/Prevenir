@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="icon" href="../assets/images/Web/logo.png">
+    <title>Autochequeo</title>
+</head>
+
+<body style="background-color:#ECECEC;">
+    <img class="banner" src="../assets/images/Head_chico.png" alt="berisso banner" width="100%" height="100%">
+    <table width="300" height="100" class="tabla">
+        <tr>
+            <td>
+                <img src="../assets/images/BOTONES/autochequeo.png" alt="AutochequeoFormu" class="btnAutochequeoFormu">
+            </td>
+        </tr>
+    </table>
+
+    <table width="320" height="50" class="tablaAutochequeo">
+
+        <tr>
+            <td>
+                <p class="text-autochequeo">¿Sos <a style="color: #1244e7;"><u>personal esencial o persona de <br> riesgo</u></a>?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="EseRies" value="Si" id="EseRies" required> Sí</label>
+
+                    <label><input type="radio" name="EseRies" value="No" id="EseRies" required> No</label>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-autochequeo">¿Tuviste o tenés contacto estrecho con algun caso confirmado de COVID-19?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="contacto" value="Si" id="contactoSi" required> Sí</label>
+
+                    <label><input type="radio" name="contacto" value="No" id="contactoNo" required> No</label>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-autochequeo">¿Presentas temperatura igual o mayor a <a style="color: #E15252;"><b>37.5°C</b></a> ?</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="radio" name="temperatura" value="Si" id="tempSi" required> Sí</label>
+
+                    <label><input type="radio" name="temperatura" value="No" id="tempNo" required> No</label>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table width="320" height="50" class="tablaAutochequeo" style="margin-top: 5px;">
+        <tr>
+            <td>
+                <p class="text-centeredSignUp">Si presentas otros síntomas podes marcarlos a continuación.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="radiobtn">
+                    <label><input type="checkbox" name="garganta" value="Si" id="gar"> Dolor de garganta</label><br>
+
+                    <label><input type="checkbox" name="respiratoria" value="Si" id="resp"> Dificultad respiratoria</label><br>
+
+                    <label><input type="checkbox" name="toser" value="Si" id="tos"> Tos</label><br>
+
+                    <label><input type="checkbox" name="gusOlf" value="Si" id="gus"> Perdida de gusto/olfato</label><br>
+                </p>
+            </td>
+        </tr>
+    </table><br>
+
+    <table width="206" height="77" class="tabla">
+        <tbody>
+            <tr>
+                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar" onclick="enviarform()"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="../iniciodb.js"></script>
+    <script src="../usernologeado.js"></script>
+    <script src="autochequeo.js"></script>
+</body>
+
+</html>
