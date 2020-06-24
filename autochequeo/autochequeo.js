@@ -81,5 +81,6 @@ function llenardatos() {
         } else if (Personal_Esencial = "No", Contacto_estrecho = "No", Fiebre = "No" && sintomas < 4) {
             Sospechoso = "No";
         }
+        Falta hacer
         */
 }
