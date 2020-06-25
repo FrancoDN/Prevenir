@@ -1,5 +1,5 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        window.open('../botonera/botonera.html', "_self");
+        window.open('https://prevenir.net.ar/botonera/botonera.html', "_self");
     }
 });
