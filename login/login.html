@@ -16,21 +16,23 @@
 
         <img id="bannerWeb" src="../assets/images/Web/head_web.png" width="100%" height="100%"></img>
 
-        <!--TODO: Esta linea de codigo es para hacer responsive el header-->
+    <!--TODO: Esta linea de codigo es para hacer responsive el header
         <script type="text/javascript">
             function bannerPhone() {
                 document.getElementById('bannerWeb');
                 if (screen.width <= 400) {}
             }
         </script>
+    -->
 
         <div class="container">
             <div>
-                <a><input type="email" class="loginField" id="email" alt="Email" placeholder="Email"></a>
+                <a><input required type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="loginFieldSignUp" placeholder="Email"></a>
             </div>
 
             <div>
-                <a><input type="number" class="loginField" id="dni" alt="DNI" placeholder="DNI"></a>
+                <a><input required type="number" ::-webkit-outer-spin-button id="dni"  name="dni" class="loginField" placeholder="DNI"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8"></a>
             </div>
 
         </div>
