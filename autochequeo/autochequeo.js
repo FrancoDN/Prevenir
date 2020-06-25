@@ -77,25 +77,25 @@ function llenardatos() {
 
     if (Contacto_estrecho === "Si" && sintomas >= 1) {
         Sospechoso = "Si";
-        window.open('../resultados/positivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
     } else if (Personal_Esencial === "Si" && sintomas >= 2) {
         Sospechoso = "Si";
-        window.open('../resultados/positivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
     } else if (Fiebre === "Si" && sintomas >= 2) {
         Sospechoso = "Si";
-        window.open('../resultados/positivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
     } else if (Personal_Esencial === "Si" && sintomas <= 1) {
         Sospechoso = "No";
-        window.open('../resultados/esen_noPositivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/esen_noPositivo.html', "_self");
     } else if (Personal_Esencial === "No" && Fiebre === "No" && Contacto_estrecho === "No" && sintomas === 4) {
         Sospechoso = "Si";
-        window.open('../resultados/positivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
     } else if (Personal_Esencial === "No" && sintomas <= 1) {
         Sospechoso = "No";
-        window.open('../resultados/noPositivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/noPositivo.html', "_self");
     } else if (Personal_Esencial === "No" && Contacto_estrecho === "No" && Fiebre === "No" && sintomas < 4) {
         Sospechoso = "No";
-        window.open('../resultados/noPositivo.html', "_self");
+        window.open('https://prevenir.net.ar/resultados/noPositivo.html', "_self");
     }   
 
 }

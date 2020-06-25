@@ -8,13 +8,6 @@ var dni = document.getElementById("dni");
 var telefono = document.getElementById("telefono");
 var edad = document.getElementById("edad");
 
-regFormu.nombre.oninvalid = function(event){
-    event.target.setCustomValidity('El campo nombre debe tener al menos 3 caracteres y no puede contener números');
-}
-regFormu.apellido.oninvalid = function(event){
-    event.target.setCustomValidity('El campo apellido debe tener al menos 3 caracteres y no puede contener números');
-}
-
 // TODO: Falta hacer la validacion para el campo DNI y teléfono, hay que ponerle un largo minimo.
 
 regFormu.dni.oninvalid = function(event){
@@ -45,7 +38,7 @@ regFormu.addEventListener('submit', (e) => {
                 console.log(uid);
                 var data = { nombre, apellido, email, dni, direc, edad }
                 ref.child(uid).update(data);
-                window.open('../login/login.html', "_self");
+                window.open('https://prevenir.net.ar/index.html', "_self");
             } else {
                 window.alert("No se pudo cargar tu información, intentá nuevamente");
             }
