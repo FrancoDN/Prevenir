@@ -241,6 +241,30 @@ input[type=number]::-webkit-outer-spin-button {
     border: transparent;
 }
 
+.btnSahre {
+    margin: 0;
+    background-image: url(./assets/images/BOTONES/comparti.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnShare:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
 .btnAutochequeo {
     margin: 0;
     background-image: url(./assets/images/BOTONES/autochequeo.png);
@@ -485,7 +509,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #000000;
     font-weight: 450;
     font-family: "Montserrat";
-    src: url(https://prevenir.net.ar/assets/fonts/Montserrat);
+    src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Medium.ttf);
     margin: auto;
     text-align: start;
     font-size: 15px;
