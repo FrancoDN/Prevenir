@@ -5,13 +5,11 @@ const loginFormu = document.getElementById('loginform');
 //Auth
 loginFormu.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log("apretadoide")
 
     const email = loginFormu['email'].value;
     const dni = loginFormu['dni'].value;
 
     firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
-        console.log(cred);
     }).catch(function(error) {
 
 
