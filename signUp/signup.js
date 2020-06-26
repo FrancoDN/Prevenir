@@ -2,6 +2,7 @@ const regFormu = document.querySelector('#regform');
 firebase.auth().signOut();
 var uid;
 
+
 var nombre = document.getElementById("nombre");
 var apellido = document.getElementById("apellido");
 var dni = document.getElementById("dni");
@@ -32,9 +33,11 @@ regFormu.addEventListener('submit', (e) => {
     firebase.auth().createUserWithEmailAndPassword(email, dni).then(cred => {
         var uid;
         firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-
-                uid = user.uid;
+            var user = firebase.auth().currentUser;
+                user.sendEmailVerification().then(function(){
+                    window.alert("Por favor, revise su casila de correo para verificar su email")
+                    if (user) {
+                        uid = user.uid;
                 console.log(uid);
                 var data = { nombre, apellido, email, dni, direc, edad }
                 ref.child(uid).update(data);
@@ -42,6 +45,10 @@ regFormu.addEventListener('submit', (e) => {
             } else {
                 window.alert("No se pudo cargar tu información, intentá nuevamente");
             }
+                }).catch(function(error) {
+                    windows.alert("No se a podido verificar la validez de su email, por favor vuelva a intentar o ingrese otro email.")
+                });
+                
         });
     }).catch(function(error) {
         var errorCode = error.code;
