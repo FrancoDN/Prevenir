@@ -43,16 +43,18 @@ regFormu.addEventListener('submit', (e) => {
                 window.alert("No se pudo cargar tu información, intentá nuevamente");
             }
         });
+    }).catch(function(error) {
+        var errorCode = error.code;
+    
+        if (errorCode == 'auth/email-already-in-use') {
+            alert('Este email ya está en uso, por favor ingrese otro.');
+          }
+        if (errorCode == 'auth/weak-password'){
+            alert('Ingrese un DNI válido');
+          }
+        });
 
-    });
-
-
-
-
-})
-
-
-
+});
 /*
 const regFormu = document.querySelector('#regform');
 //Constantes
@@ -87,3 +89,4 @@ function getId(id) {
     return document.getElementById(id).value;
 }
 */
+
