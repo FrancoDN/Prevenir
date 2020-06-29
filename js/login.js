@@ -9,8 +9,7 @@ loginFormu.addEventListener('submit', (e) => {
     const email = loginFormu['email'].value;
     const dni = loginFormu['dni'].value;
 
-    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {
-    }).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(email, dni).then(cred => {}).catch(function(error) {
 
 
         var errorCode = error.code;
