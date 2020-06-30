@@ -4,6 +4,13 @@
     .numerito {
         padding-left: 3%;
         font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .titulo {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
     }
     
     .containerCondiciones {
@@ -34,10 +41,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../styles.css" />
     <title>Ingreso Prevenir</title>
-    <link rel="icon" href="assets/images/Web/logo.png">
+    <link rel="icon" href="../assets/images/Web/logo.png">
 </head>
 
 <body class="backgroundcolor" style="margin: 0px; padding: 0px;">
@@ -47,7 +54,7 @@
         <p>[Previo al formulario de registro insertar la leyenda: “Este formulario tiene carácter de declaración jurada. Hacer una falsa declaración es considerada una contravención grave.” para que el usuario la acepte.]</p>
 
 
-        <p style="text-align: center;font-weight: bold;">Términos y Condiciones</p>
+        <p class="titulo">Términos y Condiciones</p>
         <p> presentes términos y condiciones (en adelante, los “Términos y Condiciones”) rigen la relación entre la Secretaría de Salud de la Municipalidad de Berisso (en adelante, la “Secretaría”) y los usuarios (en adelante, los “Usuarios”) de la aplicación
             denominada “__________” , que podrá descargarse de las tiendas de aplicaciones oficiales de Android e iOS (???) (en adelante, la “Aplicación”). El ingreso del Usuario en la Aplicación implica la aceptación inmediata y sin reserva de los presentes
             Términos y Condiciones. En consecuencia, el Usuario manifiesta haber leído y aceptado en su totalidad los Términos y Condiciones; dicha aceptación es indispensable para la utilización de la Aplicación. Si no está de acuerdo con los presentes
@@ -213,9 +220,5 @@
         </p>
     </div>
     <div style="padding:3vw; margin: auto;"><input type="button" alt="Menu" class="botonVolver" onclick="location.href='../index.html'"></div>
-    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-    <script src="../js/iniciodb.js"></script>
-    <script src="../js/usernologeado.js"></script>
-    <script src="../js/persistenciadeusuario.js"></script>
+
 </body>

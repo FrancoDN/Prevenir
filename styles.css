@@ -489,7 +489,7 @@ input[type=number]::-webkit-outer-spin-button {
 .text-centeredSignUp {
     color: #000000;
     font-weight: 450;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Light.ttf);
     margin: auto;
     text-align: center;
