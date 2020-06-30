@@ -26,7 +26,7 @@ signInForm.addEventListener("submit", (e) => {
       alert('Ingreso exitoso!');
       signInForm.reset();
       console.log("ingreso exitoso");
-      window.open('http://192.168.0.110:4000/public/search.html', "_self");
+      window.open('https://prevenir.net.ar/Baja_prevenir/search.html', "_self");
  
   
   }).catch(function(error) {

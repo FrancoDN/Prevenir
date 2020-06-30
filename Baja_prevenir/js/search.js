@@ -39,7 +39,7 @@ signOut.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().signOut().then(function() {
         alert("Sesión cerrada");
-        window.open('http://192.168.0.110:4000/public/login.html', "_self");
+        window.open('https://prevenir.net.ar/Baja_prevenir/index.html', "_self");
       }).catch(function(error) {
         alert("No se a podido cerrar la sesión, intente nuevamente");
       });
@@ -66,7 +66,7 @@ signOut.addEventListener('click', (e) => {
             // Cierra la sesion de firebase 
             firebase.auth().signOut().then(function() {
                 alert("Sesión cerrada por inactividad");
-                window.open('http://192.168.0.110:4000/public/login.html', "_self");
+                window.open('https://prevenir.net.ar/Baja_prevenir/index.html', "_self");
               }).catch(function(error) {
                 alert("Error");
               });
@@ -286,6 +286,6 @@ snapshot.forEach(function(childSnapshot){
 
 }else{
     alert("Debe autentificarse antes de acceder a esta página");
-    window.open('http://192.168.0.110:4000/public/login.html', "_self");
+    window.open('https://prevenir.net.ar/Baja_prevenir/index.html', "_self");
 }
 });
