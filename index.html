@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
      <link rel="stylesheet" type="text/css" href="styles.css" />
+     <link rel="manifest" href="/manifest.json">
     <title>Ingreso Prevenir</title>
     <link rel="icon" href="assets/images/Web/logo.png">
 </head>
@@ -79,5 +80,15 @@
     <script src="js/login.js"></script>
     <script src="styles.css"></script>
 </body>
-
+<script>
+    if ('serviceWorker' in navigator) {
+       console.log("Will the service worker register?");
+       navigator.serviceWorker.register('service-worker.js')
+         .then(function(reg){
+           console.log("Yes, it did.");
+        }).catch(function(err) {
+           console.log("No it didn't. This happened:", err)
+       });
+    }
+   </script>
 </html>
