@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+    </style>
+  <title>PREVENIR Berisso</title>
+  </head>
+  <body>
+	  <h2>Prevenir Berisso</h2>
+      <div class="container">
+        <button  id="signOut" class="btn waves-effect waves-light red" >Cerrar sesión</button>
+<br><br>
+
+        <table class="table" >
+          <thead >
+              <tr>
+                  <th scope="col">Casos sospechosos</th>
+                <th scope="col">Casos no sospechosos</th>
+              </tr>
+          </thead>
+          <tbody id="casos" >
+            <tr>
+              <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+      </table><br><br>
+        <label for="buscar" class="text-align: center">Buscar por DNI</label><br>
+
+  <input type="tel" id="buscar" placeholder="DNI" maxlength="8"><br><br>
+
+  <table class="centered">
+      <th scope="col"><button  id="submit" class="btn waves-effect waves-light" >Buscar DNI</button></th>
+      <th scope="col"><button  id="esencial" class="btn waves-effect waves-light" >Esencial/Riesgo</button></th>
+      <th scope="col"><button  id="sospechoso" class="btn waves-effect waves-light" >Sospechosos</button></th>
+      <th scope="col"><button  id="noSospechoso" class="btn waves-effect waves-light">No sospechosos</button></th>
+</table>
+<br><br>
+        <br>
+        <br>
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Edad</th>
+                <th>Dirección</th>
+                <th>Sexo</th>
+                <th>Personal esencial/riesgo</th>
+                <th>Contacto estrecho</th>
+                <th>Dolor de garganta</th>
+                <th>Fiebre</th>
+                <th>Dificultad respiratoria</th>
+                <th>Perdida de gusto/olfato</th>
+                <th>Caso sospechoso</th>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+	
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="./js/search.js"></script>
+  </body>
+</html>

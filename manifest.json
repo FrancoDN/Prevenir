@@ -1,0 +1,15 @@
+{
+    "short_name": "Prevenir Berisso",
+    "name": "Prevenir Berisso",
+    "theme_color": "#69C9F3",
+    "background_color": "#69C9F3",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "assets/images/Web/icon-hires.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/?utm_source=launcher"
+  }
