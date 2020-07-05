@@ -1,12 +1,12 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyDDRyqvjiteCRv9dtsvepBFntWCj2_2u7A",
-    authDomain: "coronapp-b1f3c.firebaseapp.com",
-    databaseURL: "https://coronapp-b1f3c.firebaseio.com",
-    projectId: "coronapp-b1f3c",
-    storageBucket: "coronapp-b1f3c.appspot.com",
-    messagingSenderId: "971835283337",
-    appId: "1:971835283337:web:0637a51c09501d1970b358",
-    measurementId: "G-HM80TBP5GQ"
+  apiKey: "AIzaSyCxBaoLoczWuMLOanQSBzyZMrgZ1CyBVaI",
+  authDomain: "prevenir-ensenada.firebaseapp.com",
+  databaseURL: "https://prevenir-ensenada.firebaseio.com",
+  projectId: "prevenir-ensenada",
+  storageBucket: "prevenir-ensenada.appspot.com",
+  messagingSenderId: "489743770277",
+  appId: "1:489743770277:web:2adb3526e749a1f5e0e34c",
+  measurementId: "G-DRHFR1WHB1"
   };
   // Inicializamos Firebase
   firebase.initializeApp(firebaseConfig);
