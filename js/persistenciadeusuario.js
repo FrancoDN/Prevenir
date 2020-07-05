@@ -20,7 +20,7 @@ function CheckIdleTime() {
         // Cierra la sesion de firebase 
         firebase.auth().signOut().then(function() {
             alert("Sesión cerrada por inactividad");
-            window.open('https://prevenir.net.ar/index.html', "_self");
+            window.open('https://prevenir.net.ar/ensenada/index.html', "_self");
         }).catch(function(error) {
             alert("Error");
         });

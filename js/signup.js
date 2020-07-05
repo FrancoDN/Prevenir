@@ -38,7 +38,7 @@ regFormu.addEventListener('submit', (e) => {
                 console.log(uid);
                 var data = { nombre, apellido, email, dni, direc, edad }
                 ref.child(uid).update(data);
-                window.open('https://prevenir.net.ar/index.html', "_self");
+                window.open('https://prevenir.net.ar/ensenada/index.html', "_self");
             } else {
                 window.alert("No se pudo cargar tu información, intentá nuevamente");
             }
