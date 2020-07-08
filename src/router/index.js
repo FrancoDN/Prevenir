@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Registro from '../views/Registro.vue'
+import Botonera from '../views/Botonera.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
     path: '/registro',
     name: 'Registro',
     component: Registro
+  },
+  {
+    path: '/botonera',
+    name: 'Botonera',
+    component: Botonera
   },
   {
     path: '/about',
