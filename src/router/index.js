@@ -5,19 +5,31 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
   const routes = [
-  {
+    
+    {
+    // Esta tendria que ser la botonera
     path: '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/registro',
+    name: 'Registro',
+    
+    component: () => import( '../views/Registro.vue')
+  },
+  //{
+  //  path: '/autochequeo',
+  //  name: 'Autochequeo',
+    
+  //  component: () => import( '../views/Autochequeo.vue')
+  //},
+
 ]
 
 
