@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Registro from '../views/Registro.vue'
 import Botonera from '../views/Botonera.vue'
+import Autochequeo from '../views/Autochequeo.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ Vue.use(VueRouter)
     path: '/botonera',
     name: 'Botonera',
     component: Botonera
+  },
+  {
+    path: '/autochequeo',
+    name: 'Autochequeo',
+    component: Autochequeo
   },
   {
     path: '/about',

@@ -1,10 +1,10 @@
 <template>
   <div>
-      <img class="banner" src="../assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
+      <img class="banner" src="../../public/assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
     <table width="300" height="100" class="tabla">
         <tr>
             <td>
-                <img src="../assets/images/Autochequeo/autochequeo.png" alt="AutochequeoFormu" class="btnAutochequeoFormu">
+                <img src="../../public/assets/images/Autochequeo/autochequeo.png" alt="AutochequeoFormu" class="btnAutochequeoFormu">
             </td>
         </tr>
     </table>
@@ -20,7 +20,7 @@
             <td>
                 <p class="radiobtn">
                     <label><input type="radio" name="EseRies" value="Si" id="EseRies" required> Sí</label>
-
+&nbsp;
                     <label><input type="radio" name="EseRies" value="No" id="EseRies" required> No</label>
                 </p>
             </td>
@@ -34,7 +34,7 @@
             <td>
                 <p class="radiobtn">
                     <label><input type="radio" name="contacto" value="Si" id="contactoSi" required> Sí</label>
-
+&nbsp;
                     <label><input type="radio" name="contacto" value="No" id="contactoNo" required> No</label>
                 </p>
             </td>
@@ -48,7 +48,7 @@
             <td>
                 <p class="radiobtn">
                     <label><input type="radio" name="temperatura" value="Si" id="tempSi" required> Sí</label>
-
+                    &nbsp;
                     <label><input type="radio" name="temperatura" value="No" id="tempNo" required> No</label>
                 </p>
             </td>
@@ -87,7 +87,10 @@
   </div>
 </template>
 
+
+<!---//TODO: Falta integrar firebase-->
 <script>
+/*
 //var data = {gustolf,riesgo,contacto};
 var Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato;
 var sintomas = 0;
@@ -189,8 +192,71 @@ function llenardatos() {
     }
 
 }
+*/
 </script>
 
 <style>
+.radiobtn {
+    font-size: 15px;
+    padding-top: 8px;
+    font-weight: 450;
+    padding-inline-start: 15px;
+    font-family: "Montserrat";
+}
+.btnEnviar {
+    margin: 0;
+    background-image: url(/assets/images/Registro/ENVIAR.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 70%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
 
+.btnEnviar:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.text-autochequeo {
+    color: #000000;
+    font-weight: 450;
+    font-family: "Montserrat";
+    src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Medium.ttf);
+    margin: auto;
+    text-align: start;
+    font-size: 15px;
+    padding-inline-start: 5px
+}
+.text-centeredSignUp {
+    color: #000000;
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+    src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Light.ttf);
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    padding-inline-start: 5px
+}
+
+.tabla {
+    margin: auto;
+    border: 0;
+}
+
+.tablaAutochequeo {
+    margin: auto;
+    border: 0;
+    background-color: #CFD6D2;
+    border-radius: 10px;
+}
 </style>
