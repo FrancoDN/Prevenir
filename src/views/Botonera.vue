@@ -1,6 +1,6 @@
 <template>
   <div>
-      <img src="../assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
+      <img src="../../public/assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
 
     <table width="300" height="430" class="tabla">
         <tbody>
@@ -26,6 +26,8 @@
                 <td><input type="button" alt="Sesion" class="btnSesion" id="sesion" onclick="cerrarsesion()"></td>
                 <td><input type="button" alt="Share" class="btnShare" id="share" onclick="location.href='../share.html'"></td>
             </tr>
+        </tbody>
+    </table>
   </div>
 </template>
 
@@ -33,8 +35,155 @@
 export default {
 
 }
+
+//TODO: Falta integrar firebase
+/*
+function cerrarsesion() {
+    firebase.auth().signOut();
+}
+*/
 </script>
 
 <style>
 
+.btnSesion {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/sesion.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 40%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnSesion:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 30%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+.btnShare {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/comparti.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnShare:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+.btnAutochequeo {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/autochequeo.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnAutochequeo:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnEmergencia {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/numeros.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnEmergencia:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+.btnSintomas {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/sintomas.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnSintomas:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnPrevencion {
+    margin: 0;
+    background-image: url(/assets/images/BOTONES/prevencion.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
+
+.btnPrevencion:hover {
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: transparent;
+    border: transparent;
+}
 </style>
