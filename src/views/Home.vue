@@ -47,15 +47,37 @@
 
 
 export default {
-  data() {
-    return {
-      img: '../../public/assets/imagenes/Head chico.png'
-    }
-  },
+ 
 }
 </script>
 
 <style>
+
+.loginField {
+    width: 100%;
+    height: 52px;
+    margin-top: 6%;
+    align-content: center;
+    border-radius: 24px;
+    background-color: #DFDFDF;
+    border: 0;
+    outline: 0;
+    position: relative;
+    padding-inline-start: 30px;
+}
+
+.loginFieldSignUp {
+    width: 100%;
+    height: 47px;
+    margin-top: 6%;
+    align-content: center;
+    border-radius: 24px;
+    background-color: #DFDFDF;
+    border: 0;
+    outline: 0;
+    position: relative;
+    padding-inline-start: 30px;
+}
 
 .container {
     align-content: center;
