@@ -117,12 +117,24 @@ export default {
 
             enviarPreguntas( respuestas ) {
                 console.log(respuestas)
+
+                auth.onAuthStateChanged(function(user) {
+                    if (user) {
+                        llenardatos();
+                        uid = user.uid;
+                        var data = { Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato, Sospechoso }
+                        db.ref('Personas').child(uid).update(data);
+                        alert("Envio exitoso!");
+                    }
+                });
+
             }
         }
 }
 //var data = {gustolf,riesgo,contacto};
 import {auth, db} from '../firebase'
 
+/*
 function enviarform() {
     if (document.querySelector('input[name="EseRies"]:checked') && document.querySelector('input[name="contacto"]:checked') && document.querySelector('input[name="temperatura"]:checked')) {
         var uid;
@@ -151,6 +163,7 @@ function enviarform() {
         }
     }
 }
+*/
 
 
 function llenardatos() {
