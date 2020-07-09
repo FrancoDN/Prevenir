@@ -3,13 +3,13 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-
-Vue.config.productionTip = false
-
 import {auth} from './firebase'
 
+Vue.config.productionTip = false
+   
+
 auth.onAuthStateChanged(user => {
-  
+    
   if(user){
     // console.log(user)
     const detectoUsuario = {
@@ -27,5 +27,5 @@ auth.onAuthStateChanged(user => {
     store,
     render: h => h(App)
   }).$mount('#app')
-
 })
+
