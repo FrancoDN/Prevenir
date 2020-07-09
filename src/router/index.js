@@ -12,6 +12,8 @@ import ResultadoNega from '../views/ResultadoNega.vue'
 import ResultadoEsen from '../views/ResultadoEsen.vue'
 import Condiciones from '../views/Condiciones.vue'
 
+import {auth} from '../firebase'
+
 
 Vue.use(VueRouter)
 
@@ -21,7 +23,8 @@ Vue.use(VueRouter)
     // Esta tendria que ser la botonera
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { requiresAuth: true}
   },
   {
     path: '/login',
@@ -32,55 +35,53 @@ Vue.use(VueRouter)
   {
     path: '/registro',
     name: 'Registro',
-    
     component: Registro
   },
   {
     path: '/sintomas',
     name: 'Sintomas',
-    
-    component: Sintomas
+    component: Sintomas,
+    meta: { requiresAuth: true}
   },
   {
     path: '/autochequeo',
     name: 'Autochequeo',
-    
-    component: Autochequeo
+    component: Autochequeo,
+    meta: { requiresAuth: true}
   },
   {
     path: '/prevencion',
     name: 'Prevencion',
-    
-    component: Prevencion
+    component: Prevencion,
+    meta: { requiresAuth: true}
   },
   {
     path: '/emergencia',
     name: 'Emergencia',
-    
-    component: Emergencia
+    component: Emergencia,
+    meta: { requiresAuth: true}
   },
   {
     path: '/resultadoposi',
     name: 'ResultadoPosi',
-    
-    component: ResultadoPosi
+    component: ResultadoPosi,
+    meta: { requiresAuth: true}
   },
   {
     path: '/resultadonega',
     name: 'ResultadoNega',
-    
-    component: ResultadoNega
+    component: ResultadoNega,
+    meta: { requiresAuth: true}
   },
   {
     path: '/resultadoesen',
     name: 'ResultadoEsen',
-    
-    component: ResultadoEsen
+    component: ResultadoEsen,
+    meta: { requiresAuth: true}
   },
   {
     path: '/condiciones',
     name: 'Codiciones',
-    
     component: Condiciones
   }
   //{
@@ -93,11 +94,26 @@ Vue.use(VueRouter)
 ]
 
 
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach( (to, from, next) => {
+  if ( to.matched.some( record => record.meta.requiresAuth ) ) {
+    const usuario = auth.currentUser;
+
+    if (!usuario) {
+      next( {path: '/login'} )
+    }else {
+      next();
+    }
+
+    
+  }else {
+    next();
+  }
 })
 
 export default router

@@ -78,7 +78,7 @@
                         type="button" 
                         alt="Menu" 
                         class="btnMenu" 
-                        onclick="location.href='../botonera/botonera.html'"
+                        @click="$router.push('/')"
                     >
                 </td>
             </tr>

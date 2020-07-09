@@ -27,7 +27,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="button" alt="Menu" class="btnMenu" onclick="location.href='../botonera/botonera.html'">
+                        <input type="button" alt="Menu" class="btnMenu" @click="$router.push('/')">
                     </td>
                 </tr>
             </tbody>
@@ -38,7 +38,6 @@
 
 <script>
 export default {
-
 }
 </script>
 

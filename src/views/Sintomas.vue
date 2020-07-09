@@ -14,7 +14,7 @@
     <table width="100" height="40" class="tabla">
         <tbody>
             <tr>
-                <td><input type="button" alt="Menu" class="btnMenu" onclick="location.href='../botonera/botonera.html'"></td>
+                <td><input type="button" alt="Menu" class="btnMenu" @click="$router.push('/')"></td>
             </tr>
         </tbody>
     </table>

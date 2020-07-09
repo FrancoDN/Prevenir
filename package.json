@@ -13,6 +13,7 @@
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-sweetalert2": "^3.0.6",
+    "vuelidate": "^0.7.5",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
