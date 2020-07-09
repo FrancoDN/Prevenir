@@ -1,42 +1,46 @@
 <template>
   <div>
-    <img class="banner" src="../../public/assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
+    <h1>Registro</h1>
 
-    <div class="tabla">
-        <img src="../../public/assets/images/Registro/datos_personales.png" alt="AutochequeoFormu" class="btnAutochequeoFormu" >
-    </div>
-    <p class="text-centeredSignUp">Esto es un pre-diagnóstico medico. En caso de dudas, consultar a su medico de cabecera.</p>
     <form class="form" @submit.prevent="crearUsuario(usuario)">
         <div>
-            <input placeholder="Nombre" type="text" class="loginFieldSignUp" v-model="usuario.nombre">
+            <label>Nombre</label>
+            <input type="text" v-model="usuario.nombre">
         </div>
                 
         <div>
-            <input placeholder="Apellido" class="loginFieldSignUp" type="text" v-model="usuario.apellido">    
+            <label>Apellido</label>
+            <input type="text" v-model="usuario.apellido">    
         </div>
         
         <div>
-            <input placeholder="DNI" class="loginFieldSignUp" type="text" v-model="usuario.dni">    
+            <label>DNI</label>
+            <input type="text" v-model="usuario.dni">    
         </div>  
                 
         <div>
-            <input placeholder="Email" class="loginFieldSignUp" type="text" v-model="usuario.email">    
+            <label>Email</label>
+            <input type="text" v-model="usuario.email">    
         </div>
                 
         <div>
-            <input placeholder="Telefono" class="loginFieldSignUp" type="text" v-model="usuario.telefono">    
+            <label>Telefono</label>
+            <input type="text" v-model="usuario.telefono">    
         </div>
                 
         <div>
-            <input placeholder="Edad" class="loginFieldSignUp" type="text" v-model="usuario.edad">    
+            <label> Edad</label>
+            <input type="text" v-model="usuario.edad">    
         </div>
                 
         <div>
-            <input placeholder="Dirección" class="loginFieldSignUp" type="text" v-model="usuario.direccion">    
+            <label> direccion</label>
+            <input type="text" v-model="usuario.direccion">    
         </div>
                 
         <div>
-            <input placeholder="Sexo" class="loginFieldSignUp" type="text" v-model="usuario.sexo">    
+            <label>Sexo</label>
+            <input type="text" v-model="usuario.sexo">    
         </div>
 
         <div>
@@ -44,7 +48,7 @@
         </div>
         
     </form>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -71,32 +75,20 @@
             crearUsuario( usuario ) {
             auth.createUserWithEmailAndPassword(usuario.email, usuario.dni)
                 .then( resp => {
-                    const uuid = resp.user.uid;
-                    
-                   //var data = {nombre, apellido, dni, email, telefono, edad, direccion, sexo}
-                   //db.child("Personas").child(uuid).update(usuario);
-
-                   db.ref('Personas').child(uuid).update(usuario);
-                   console.log("Envio exitoso");
-                   console.log(uuid);
-                window.alert("Hola");
+                    console.log(resp);
+                })
                 
-            });
-        },  
+            },
         }
-    }
+
+
+}
 </script>
 
 <style>
-
 .btnAutochequeoFormu {
-    margin-top: 10px;
-    margin-bottom: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 180px;
-    height: 50px;
+    margin: 0;
+    width: 100%;
     border-radius: 100px;
 }
 
@@ -150,10 +142,8 @@
 }
 
 .tabla {
-    width: 100%;
+    margin: auto;
     border: 0;
-    
-
 }
 
 .textStyle {
@@ -176,12 +166,4 @@
     font-size: 15px;
     padding-inline-start: 5px
 }
-.banner {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    align-items: center;
-}
-
-
 </style>

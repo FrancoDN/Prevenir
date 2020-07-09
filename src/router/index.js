@@ -4,38 +4,49 @@ import Home from '../views/Home.vue'
 import Registro from '../views/Registro.vue'
 import Botonera from '../views/Botonera.vue'
 import Autochequeo from '../views/Autochequeo.vue'
+import Login from '../views/Login.vue'
+import Sintomas from '../views/Sintomas.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
-  {
+    
+    {
+    // Esta tendria que ser la botonera
     path: '/',
     name: 'Home',
     component: Home
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
     path: '/registro',
     name: 'Registro',
+    
     component: Registro
   },
   {
-    path: '/botonera',
-    name: 'Botonera',
-    component: Botonera
+    path: '/sintomas',
+    name: 'Sintomas',
+    
+    component: Sintomas
   },
   {
     path: '/autochequeo',
     name: 'Autochequeo',
+    
     component: Autochequeo
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
+  //{
+  //  path: '/autochequeo',
+  //  name: 'Autochequeo',
+    
+  //  component: () => import( '../views/Autochequeo.vue')
+  //},
+
 ]
 
 

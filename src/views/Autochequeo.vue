@@ -8,7 +8,7 @@
             </td>
         </tr>
     </table>
-
+<form class="form" @submit.prevent="updateUsuaruo(usuario)">
     <table width="320" height="50" class="tablaAutochequeo">
 
         <tr>
@@ -19,9 +19,10 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="EseRies" value="Si" id="EseRies" required> Sí</label>
+                    <label><input type="radio" name="EseRies" value="Si" id="EseRies" v-model="preguntas.pickEs" > Sí</label>
 &nbsp;
-                    <label><input type="radio" name="EseRies" value="No" id="EseRies" required> No</label>
+                    <label><input type="radio" name="EseRies" value="No" id="EseRies" v-model="preguntas.pickEs"> No</label>
+                
                 </p>
             </td>
         </tr>
@@ -33,9 +34,9 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="contacto" value="Si" id="contactoSi" required> Sí</label>
+                    <label><input type="radio" name="contacto" value="Si" id="contactoSi" v-model="preguntas.pickCon"> Sí</label>
 &nbsp;
-                    <label><input type="radio" name="contacto" value="No" id="contactoNo" required> No</label>
+                    <label><input type="radio" name="contacto" value="No" id="contactoNo" v-model="preguntas.pickCon"> No</label>
                 </p>
             </td>
         </tr>
@@ -47,9 +48,9 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="radio" name="temperatura" value="Si" id="tempSi" required> Sí</label>
+                    <label><input type="radio" name="temperatura" value="Si" id="tempSi" v-model="preguntas.pickTem"> Sí</label>
                     &nbsp;
-                    <label><input type="radio" name="temperatura" value="No" id="tempNo" required> No</label>
+                    <label><input type="radio" name="temperatura" value="No" id="tempNo" v-model="preguntas.pickTem"> No</label>
                 </p>
             </td>
         </tr>
@@ -64,48 +65,73 @@
         <tr>
             <td>
                 <p class="radiobtn">
-                    <label><input type="checkbox" name="garganta" value="Si" id="gar"> Dolor de garganta</label><br>
+                    <label><input type="checkbox" name="garganta"  id="gar" v-model="preguntas.garChecked"> Dolor de garganta</label><br>
 
-                    <label><input type="checkbox" name="respiratoria" value="Si" id="resp"> Dificultad respiratoria</label><br>
+                    <label><input type="checkbox" name="respiratoria"  id="resp" v-model="preguntas.respChecked"> Dificultad respiratoria</label><br>
 
-                    <label><input type="checkbox" name="toser" value="Si" id="tos"> Tos</label><br>
+                    <label><input type="checkbox" name="toser"  id="tos" v-model="preguntas.tosChecked"> Tos</label><br>
 
-                    <label><input type="checkbox" name="gusOlf" value="Si" id="gus"> Perdida de gusto/olfato</label><br>
+                    <label><input type="checkbox" name="gusOlf"  id="gus" v-model="preguntas.gusChecked"> Perdida de gusto/olfato</label><br>
+                    
                 </p>
             </td>
         </tr>
     </table><br>
-
+</form>
     <table width="206" height="77" class="tabla">
         <tbody>
             <tr>
-                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar" onclick="enviarform()">
+                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar" @click="enviarPreguntas( preguntas )">
                 </td>
             </tr>
         </tbody>
     </table>
+
   </div>
 </template>
 
 
 <!---//TODO: Falta integrar firebase-->
 <script>
-/*
-//var data = {gustolf,riesgo,contacto};
-var Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato;
-var sintomas = 0;
-var Sospechoso = null;
+export default {
+        data(){
+            
+            return {
+            
+                preguntas: {
+                    pickEs: 'No',
+                    pickCon: 'No',
+                    pickTem: 'No',
+                    garChecked: false,
+                    respChecked: false,
+                    tosChecked: false,
+                    gusChecked: false
+                }
+            }
+        },
 
+         methods: {
+            updateUsuario( usuario ) {
+
+            },
+
+            enviarPreguntas( respuestas ) {
+                console.log(respuestas)
+            }
+        }
+}
+//var data = {gustolf,riesgo,contacto};
+import {auth, db} from '../firebase'
 
 function enviarform() {
     if (document.querySelector('input[name="EseRies"]:checked') && document.querySelector('input[name="contacto"]:checked') && document.querySelector('input[name="temperatura"]:checked')) {
         var uid;
-        firebase.auth().onAuthStateChanged(function(user) {
+        auth.onAuthStateChanged(function(user) {
             if (user) {
                 llenardatos();
                 uid = user.uid;
                 var data = { Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato, Sospechoso }
-                ref.child(uid).update(data);
+                db.ref('Personas').child(uid).update(data);
                 alert("Envio exitoso!");
             }
         });
@@ -192,7 +218,7 @@ function llenardatos() {
     }
 
 }
-*/
+
 </script>
 
 <style>

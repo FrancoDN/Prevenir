@@ -1,18 +1,18 @@
 <template>
- <div>
+  <div>
       <img src="../../public/assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
 
     <table width="300" height="430" class="tabla">
         <tbody>
             &nbsp;
             <tr>
-                <td><input @click="navegar( 'sintomas' )" type="button" alt="Sintomas" class="btnSintomas" ></td>
+                <td><input type="button" alt="Sintomas" class="btnSintomas" onclick="location.href='../prevenSinto/sintomas.html'"></td>
             </tr>
             <tr>
                 <td><input type="button" alt="Prevencion" class="btnPrevencion" onclick="location.href='../prevenSinto/prevencion.html'"></td>
             </tr>
             <tr>
-                <td><input type="button" alt="Autochequeo" class="btnAutochequeo" @click="navegar( 'autochequeo' )"></td>
+                <td><input type="button" alt="Autochequeo" class="btnAutochequeo" onclick="location.href='../autochequeo/autochequeo.html'"></td>
             </tr>
             <tr>
                 <td><input type="button" alt="Emergencia" class="btnEmergencia" onclick="location.href='../emergencia/numeros.html'"></td>
@@ -34,11 +34,6 @@
 <script>
 export default {
 
-    methods: {
-        navegar( destino ) {
-            this.$router.push(destino)
-        }
-    }
 }
 </script>
 
