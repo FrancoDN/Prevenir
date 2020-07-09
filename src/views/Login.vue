@@ -80,6 +80,8 @@
 </template>
 
 <script>
+//TODO: Mostrar error de inicio de sesion
+
 import { mapActions, mapState } from "vuex";
 
 

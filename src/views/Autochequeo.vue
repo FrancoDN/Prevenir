@@ -243,6 +243,40 @@ export default {
               this.preguntas.Dolor_de_garganta = 'No'
           }
 
+
+            enviarPreguntas( respuestas ) {
+                console.log(respuestas)
+
+                auth.onAuthStateChanged(function(user) {
+                    if (user) {
+                        llenardatos();
+                        uid = user.uid;
+                        var data = { Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato, Sospechoso }
+                        db.ref('Personas').child(uid).update(data);
+                        alert("Envio exitoso!");
+                    }
+                });
+
+            }
+        }
+}
+//var data = {gustolf,riesgo,contacto};
+import {auth, db} from '../firebase'
+
+/*
+function enviarform() {
+    if (document.querySelector('input[name="EseRies"]:checked') && document.querySelector('input[name="contacto"]:checked') && document.querySelector('input[name="temperatura"]:checked')) {
+        var uid;
+        auth.onAuthStateChanged(function(user) {
+            if (user) {
+                llenardatos();
+                uid = user.uid;
+                var data = { Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato, Sospechoso }
+                db.ref('Personas').child(uid).update(data);
+                alert("Envio exitoso!");
+            }
+        });
+
           if(this.preguntas.Dificultad_respiratoria){
               this.preguntas.Dificultad_respiratoria = 'Si'
           }else{
@@ -254,6 +288,7 @@ export default {
           }else{
               this.preguntas.Tos = 'No'
           }
+
 
           if(this.preguntas.Perdida_gusto_olfato){
               this.preguntas.Perdida_gusto_olfato = 'Si'
@@ -302,6 +337,12 @@ export default {
             console.log(contador);
             return this.preguntas.Caso_sospechoso = 'Si'
         }
+
+    }
+}
+*/
+
+
 
         // Como no cumple ninguno de los anteriores es NO
         console.log(contador);

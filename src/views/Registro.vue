@@ -38,10 +38,16 @@
         <div>
             <input placeholder="Sexo" class="loginFieldSignUp" type="text" v-model="usuario.sexo">    
         </div>
-
-        <div>
-            <button type="submit">Nuevo</button>
-        </div>
+<br>
+        <table width="150" height="60" class="tabla">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="submit" alt="Ingreso" class="btnSignUp" value="">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         
     </form>
     </div>
@@ -70,7 +76,22 @@
 
         methods: {
 
+            crearUsuario( usuario ) {
+            auth.createUserWithEmailAndPassword(usuario.email, usuario.dni)
+                .then( resp => {
+                    const uuid = resp.user.uid;
+                    
+                   //var data = {nombre, apellido, dni, email, telefono, edad, direccion, sexo}
+                   //db.child("Personas").child(uuid).update(usuario);
+
+                   db.ref('Personas').child(uuid).update(usuario);
+                
+            });
+        },  
+
+
             ...mapActions(['crearUsuario']),
+
         }
     }
 </script>
