@@ -50,6 +50,7 @@
 <script>
 
     import {auth, db} from '../firebase'
+    import { mapActions, mapState } from "vuex";
 
     export default {
         data(){
@@ -68,21 +69,8 @@
         },
 
         methods: {
-            crearUsuario( usuario ) {
-            auth.createUserWithEmailAndPassword(usuario.email, usuario.dni)
-                .then( resp => {
-                    const uuid = resp.user.uid;
-                    
-                   //var data = {nombre, apellido, dni, email, telefono, edad, direccion, sexo}
-                   //db.child("Personas").child(uuid).update(usuario);
 
-                   db.ref('Personas').child(uuid).update(usuario);
-                   console.log("Envio exitoso");
-                   console.log(uuid);
-                window.alert("Hola");
-                
-            });
-        },  
+            ...mapActions(['crearUsuario']),
         }
     }
 </script>

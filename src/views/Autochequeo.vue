@@ -1,288 +1,419 @@
 <template>
   <div>
-      <img class="banner" src="../../public/assets/images/Web/Head_chicoWeb.png" alt="berisso banner" width="100%" height="100%">
+    <img
+      class="banner"
+      src="../../public/assets/images/Web/Head_chicoWeb.png"
+      alt="berisso banner"
+      width="100%"
+      height="100%"
+    />
     <table width="300" height="100" class="tabla">
-        <tr>
-            <td>
-                <img src="../../public/assets/images/Autochequeo/autochequeo.png" alt="AutochequeoFormu" class="btnAutochequeoFormu">
-            </td>
-        </tr>
-    </table>
-<form class="form" @submit.prevent="updateUsuaruo(usuario)">
-    <table width="320" height="50" class="tablaAutochequeo">
-
-        <tr>
-            <td>
-                <p class="text-autochequeo">¿Que se entiende como <span onclick="alerta()" style="color:blue;text-decoration: underline;">personal esencial o persona de riesgo</span>?</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p class="radiobtn">
-                    <label><input type="radio" name="EseRies" value="Si" id="EseRies" v-model="preguntas.pickEs" > Sí</label>
-&nbsp;
-                    <label><input type="radio" name="EseRies" value="No" id="EseRies" v-model="preguntas.pickEs"> No</label>
-                
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p class="text-autochequeo">¿Tuviste o tenés contacto estrecho con algun caso confirmado de COVID-19?</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p class="radiobtn">
-                    <label><input type="radio" name="contacto" value="Si" id="contactoSi" v-model="preguntas.pickCon"> Sí</label>
-&nbsp;
-                    <label><input type="radio" name="contacto" value="No" id="contactoNo" v-model="preguntas.pickCon"> No</label>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p class="text-autochequeo">¿Presentas temperatura igual o mayor a <a style="color: #E15252;"><b>37.5°C</b></a> ?</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p class="radiobtn">
-                    <label><input type="radio" name="temperatura" value="Si" id="tempSi" v-model="preguntas.pickTem"> Sí</label>
-                    &nbsp;
-                    <label><input type="radio" name="temperatura" value="No" id="tempNo" v-model="preguntas.pickTem"> No</label>
-                </p>
-            </td>
-        </tr>
+      <tr>
+        <td>
+          <img
+            src="../../public/assets/images/Autochequeo/autochequeo.png"
+            alt="AutochequeoFormu"
+            class="btnAutochequeoFormu"
+          />
+        </td>
+      </tr>
     </table>
 
-    <table width="320" height="50" class="tablaAutochequeo" style="margin-top: 5px;">
+    <form class="form" @submit.prevent="updateUsuaruo(usuario)">
+      <table width="320" height="50" class="tablaAutochequeo">
         <tr>
-            <td>
-                <p class="text-centeredSignUp">Si presentas otros síntomas podes marcarlos a continuación.</p>
-            </td>
+          <td>
+            <p class="text-autochequeo">
+              ¿Que se entiende como
+              <span
+                onclick="alerta()"
+                style="color:blue;text-decoration: underline;"
+                >personal esencial o persona de riesgo</span
+              >?
+            </p>
+          </td>
         </tr>
         <tr>
-            <td>
-                <p class="radiobtn">
-                    <label><input type="checkbox" name="garganta"  id="gar" v-model="preguntas.garChecked"> Dolor de garganta</label><br>
-
-                    <label><input type="checkbox" name="respiratoria"  id="resp" v-model="preguntas.respChecked"> Dificultad respiratoria</label><br>
-
-                    <label><input type="checkbox" name="toser"  id="tos" v-model="preguntas.tosChecked"> Tos</label><br>
-
-                    <label><input type="checkbox" name="gusOlf"  id="gus" v-model="preguntas.gusChecked"> Perdida de gusto/olfato</label><br>
-                    
-                </p>
-            </td>
+          <td>
+            <p class="radiobtn">
+              <label
+                ><input
+                  type="radio"
+                  name="EseRies"
+                  value="Si"
+                  id="EseRies"
+                  v-model="preguntas.Personal_esencial"
+                />
+                Sí</label
+              >
+              &nbsp;
+              <label
+                ><input
+                  type="radio"
+                  name="EseRies"
+                  value="No"
+                  id="EseRies"
+                  v-model="preguntas.Personal_esencial"
+                />
+                No</label
+              >
+            </p>
+          </td>
         </tr>
-    </table><br>
-</form>
+        <tr>
+          <td>
+            <p class="text-autochequeo">
+              ¿Tuviste o tenés contacto estrecho con algun caso confirmado de
+              COVID-19?
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="radiobtn">
+              <label
+                ><input
+                  type="radio"
+                  name="contacto"
+                  value="Si"
+                  id="contactoSi"
+                  v-model="preguntas.Contacto_estrecho"
+                />
+                Sí</label
+              >
+              &nbsp;
+              <label
+                ><input
+                  type="radio"
+                  name="contacto"
+                  value="No"
+                  id="contactoNo"
+                  v-model="preguntas.Contacto_estrecho"
+                />
+                No</label
+              >
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="text-autochequeo">
+              ¿Presentas temperatura igual o mayor a
+              <a style="color: #E15252;"><b>37.5°C</b></a> ?
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="radiobtn">
+              <label
+                ><input
+                  type="radio"
+                  name="temperatura"
+                  value="Si"
+                  id="tempSi"
+                  v-model="preguntas.Fiebre"
+                />
+                Sí</label
+              >
+              &nbsp;
+              <label
+                ><input
+                  type="radio"
+                  name="temperatura"
+                  value="No"
+                  id="tempNo"
+                  v-model="preguntas.Fiebre"
+                />
+                No</label
+              >
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        width="320"
+        height="50"
+        class="tablaAutochequeo"
+        style="margin-top: 5px;"
+      >
+        <tr>
+          <td>
+            <p class="text-centeredSignUp">
+              Si presentas otros síntomas podes marcarlos a continuación.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="radiobtn">
+              <label
+                ><input
+                  type="checkbox"
+                  name="garganta"
+                  id="gar"
+                  v-model="preguntas.Dolor_de_garganta"
+                />
+                Dolor de garganta</label
+              ><br />
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="respiratoria"
+                  id="resp"
+                  v-model="preguntas.Dificultad_respiratoria"
+                />
+                Dificultad respiratoria</label
+              ><br />
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="toser"
+                  id="tos"
+                  v-model="preguntas.Tos"
+                />
+                Tos</label
+              ><br />
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="gusOlf"
+                  id="gus"
+                  v-model="preguntas.Perdida_gusto_olfato"
+                />
+                Perdida de gusto/olfato</label
+              ><br />
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+    </form>
     <table width="206" height="77" class="tabla">
-        <tbody>
-            <tr>
-                <td><input type="button" alt="Enviar" class="btnEnviar" id="enviar" @click="enviarPreguntas( preguntas )">
-                </td>
-            </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td>
+            <input
+              type="button"
+              alt="Enviar"
+              class="btnEnviar"
+              id="enviar"
+              @click="enviarPreguntas(preguntas)"
+            />
+          </td>
+        </tr>
+      </tbody>
     </table>
-
   </div>
 </template>
 
-
 <!---//TODO: Falta integrar firebase-->
 <script>
+import { auth, db } from "../firebase";
+import Swal from "sweetalert2";
+
 export default {
-        data(){
+  data() {
+    return {
+      // Preguntas en el form
+      preguntas: {
+        Personal_esencial: "No",
+        Contacto_estrecho: "No",
+        Fiebre: "No",
+        Dolor_de_garganta: false,
+        Dificultad_respiratoria: false,
+        Tos: false,
+        Perdida_gusto_olfato: false,
+      },
+    };
+  },
+
+  methods: {
+
+      cambiarChecks() {
+          
+          if(this.preguntas.Dolor_de_garganta){
+              this.preguntas.Dolor_de_garganta = 'Si'
+          }else{
+              this.preguntas.Dolor_de_garganta = 'No'
+          }
+
+          if(this.preguntas.Dificultad_respiratoria){
+              this.preguntas.Dificultad_respiratoria = 'Si'
+          }else{
+              this.preguntas.Dificultad_respiratoria = 'No'
+          }
+
+          if(this.preguntas.Tos){
+              this.preguntas.Tos = 'Si'
+          }else{
+              this.preguntas.Tos = 'No'
+          }
+
+          if(this.preguntas.Perdida_gusto_olfato){
+              this.preguntas.Perdida_gusto_olfato = 'Si'
+          }else{
+              this.preguntas.Perdida_gusto_olfato = 'No'
+          }
+      },
+
+    evaluacionEsenciales(respuesta) {
+            let contador = 0
             
-            return {
+            if(respuesta.Contacto_estrecho === 'Si') {
+                console.log(contador);
+                return this.preguntas.Caso_sospechoso = 'Si'
+            }
             
-                preguntas: {
-                    pickEs: 'No',
-                    pickCon: 'No',
-                    pickTem: 'No',
-                    garChecked: false,
-                    respChecked: false,
-                    tosChecked: false,
-                    gusChecked: false
-                }
+            if(respuesta.Fiebre === 'Si')  contador++
+            if(respuesta.Dolor_de_garganta === 'Si') contador++
+            if(respuesta.Dificultad_respiratoria === 'Si') contador++
+            if(respuesta.Tos === 'Si') contador++
+            if(respuesta.Perdida_gusto_olfato === 'Si') contador++
+            
+            if (contador >= 2) {
+                console.log(contador);
+                return this.preguntas.Caso_sospechoso = 'Si'
             }
-        },
+            console.log(contador);
+            return this.preguntas.Caso_sospechoso = 'No'
+    },
 
-         methods: {
-            updateUsuario( usuario ) {
+    evaluacionNoEsenciales(respuesta){
+        let contador = 0
 
-            },
-
-            enviarPreguntas( respuestas ) {
-                console.log(respuestas)
-            }
-        }
-}
-//var data = {gustolf,riesgo,contacto};
-import {auth, db} from '../firebase'
-
-function enviarform() {
-    if (document.querySelector('input[name="EseRies"]:checked') && document.querySelector('input[name="contacto"]:checked') && document.querySelector('input[name="temperatura"]:checked')) {
-        var uid;
-        auth.onAuthStateChanged(function(user) {
-            if (user) {
-                llenardatos();
-                uid = user.uid;
-                var data = { Personal_Esencial, Contacto_estrecho, Fiebre, Dolor_de_garganta, Dificultad_respiratoria, Tos, Perdida_gusto_olfato, Sospechoso }
-                db.ref('Personas').child(uid).update(data);
-                alert("Envio exitoso!");
-            }
-        });
-
-    } else {
-        if (!document.querySelector('input[name="EseRies"]:checked')) {
-            window.alert("Debe indicar si es personal esencial o persona de riesgo");
+        // Suma uno por cada uno que dice SI
+        if(respuesta.Fiebre === 'Si')  contador++
+        if(respuesta.Dolor_de_garganta === 'Si') contador++
+        if(respuesta.Dificultad_respiratoria === 'Si') contador++
+        if(respuesta.Tos === 'Si') contador++
+        if(respuesta.Perdida_gusto_olfato === 'Si') contador++
+        
+        // Tiene contacto estrecho y mas de un sintoma
+        if(respuesta.Contacto_estrecho === 'Si' && contador > 0) return this.preguntas.Caso_sospechoso = 'Si'
+        
+        // Si contador es mas de 4 SI
+        if (contador >= 4) {
+            console.log(contador);
+            return this.preguntas.Caso_sospechoso = 'Si'
         }
 
-        if (!document.querySelector('input[name="contacto"]:checked')) {
-            window.alert("Debe indicar si tuvo o tiene contacto estrecho con algun caso confirmado de COVID-19");
+        // Como no cumple ninguno de los anteriores es NO
+        console.log(contador);
+        return this.preguntas.Caso_sospechoso = 'No'
+    },
 
+
+    async enviarPreguntas(respuestas) {
+      
+      this.cambiarChecks();
+
+      if (respuestas.Personal_esencial === 'Si') {
+        this.evaluacionEsenciales(respuestas);
+      }else {
+        this.evaluacionNoEsenciales(respuestas)
+      }
+
+      const userUid = await auth.onAuthStateChanged(function(user) {
+        if (user) {
+          
+          db.ref("Personas")
+            .child(user.uid)
+            .update(respuestas)
+            .then((resp) => {
+              Swal.fire({
+                title: "Prevenir Berisso",
+                text: "Datos enviados con exito !",
+                icon: "success",
+              });
+              
+            })
+            .catch((error) => {
+              Swal.fire({
+                title: "Prevenir Berisso",
+                text: "Error al actualizar los datos. Intente mas tarde.",
+                icon: "error",
+              });
+
+              
+            });
+            
         }
-        if (!document.querySelector('input[name="temperatura"]:checked')) {
-            window.alert("Debe indicar si presenta temperatura mayor a 37.5°C");
+      });
 
-        }
-    }
-}
-
-
-function llenardatos() {
-
-    if (document.querySelector('input[name="EseRies"]:checked')) {
-        Personal_Esencial = document.querySelector('input[name="EseRies"]:checked').value;
-    }
-
-    if (document.querySelector('input[name="contacto"]:checked')) {
-        Contacto_estrecho = document.querySelector('input[name="contacto"]:checked').value;
-    }
-    if (document.querySelector('input[name="temperatura"]:checked')) {
-        Fiebre = document.querySelector('input[name="temperatura"]:checked').value;
-        if (Fiebre == "Si") {
-            sintomas++;
-        }
-    }
-
-    if (document.querySelector('input[name="garganta"]:checked')) {
-        Dolor_de_garganta = "Si";
-        sintomas++;
-    } else {
-        Dolor_de_garganta = "No";
-    }
-    if (document.querySelector('input[name="respiratoria"]:checked')) {
-        Dificultad_respiratoria = "Si";
-        sintomas++;
-    } else {
-        Dificultad_respiratoria = "No";
-    }
-    if (document.querySelector('input[name="toser"]:checked')) {
-        Tos = "Si";
-        sintomas++;
-    } else {
-        Tos = "No";
-    }
-    if (document.querySelector('input[name="gusOlf"]:checked')) {
-        Perdida_gusto_olfato = "Si";
-        sintomas++;
-    } else {
-        Perdida_gusto_olfato = "No";
-    }
-
-    if (Contacto_estrecho === "Si" && sintomas >= 1) {
-        Sospechoso = "Si";
-        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
-    } else if (Personal_Esencial === "Si" && sintomas >= 2) {
-        Sospechoso = "Si";
-        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
-    } else if (Fiebre === "Si" && sintomas >= 2) {
-        Sospechoso = "Si";
-        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
-    } else if (Personal_Esencial === "Si" && sintomas <= 1) {
-        Sospechoso = "No";
-        window.open('https://prevenir.net.ar/resultados/esen_noPositivo.html', "_self");
-    } else if (Personal_Esencial === "No" && Fiebre === "No" && Contacto_estrecho === "No" && sintomas === 4) {
-        Sospechoso = "Si";
-        window.open('https://prevenir.net.ar/resultados/positivo.html', "_self");
-    } else if (Personal_Esencial === "No" && sintomas <= 1) {
-        Sospechoso = "No";
-        window.open('https://prevenir.net.ar/resultados/noPositivo.html', "_self");
-    } else if (Personal_Esencial === "No" && Contacto_estrecho === "No" && Fiebre === "No" && sintomas < 4) {
-        Sospechoso = "No";
-        window.open('https://prevenir.net.ar/resultados/noPositivo.html', "_self");
-    }
-
-}
-
+      this.$router.push('/')
+    },
+  },
+};
 </script>
 
 <style>
 .radiobtn {
-    font-size: 15px;
-    padding-top: 8px;
-    font-weight: 450;
-    padding-inline-start: 15px;
-    font-family: "Montserrat";
+  font-size: 15px;
+  padding-top: 8px;
+  font-weight: 450;
+  padding-inline-start: 15px;
+  font-family: "Montserrat";
 }
 .btnEnviar {
-    margin: 0;
-    background-image: url(/assets/images/Registro/ENVIAR.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    width: 100%;
-    height: 70%;
-    border: none;
-    outline: transparent;
-    border: transparent;
+  margin: 0;
+  background-image: url(/assets/images/Registro/ENVIAR.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: transparent;
+  border: transparent;
 }
 
 .btnEnviar:hover {
-    margin: 0;
-    background-color: transparent;
-    width: 100%;
-    height: 60%;
-    border: none;
-    outline: transparent;
-    border: transparent;
+  margin: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 60%;
+  border: none;
+  outline: transparent;
+  border: transparent;
 }
 
 .text-autochequeo {
-    color: #000000;
-    font-weight: 450;
-    font-family: "Montserrat";
-    src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Medium.ttf);
-    margin: auto;
-    text-align: start;
-    font-size: 15px;
-    padding-inline-start: 5px
+  color: #000000;
+  font-weight: 450;
+  font-family: "Montserrat";
+  src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Medium.ttf);
+  margin: auto;
+  text-align: start;
+  font-size: 15px;
+  padding-inline-start: 5px;
 }
 .text-centeredSignUp {
-    color: #000000;
-    font-weight: 450;
-    font-family: "Montserrat", sans-serif;
-    src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Light.ttf);
-    margin: auto;
-    text-align: center;
-    font-size: 15px;
-    padding-inline-start: 5px
+  color: #000000;
+  font-weight: 450;
+  font-family: "Montserrat", sans-serif;
+  src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Light.ttf);
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+  padding-inline-start: 5px;
 }
 
 .tabla {
-    margin: auto;
-    border: 0;
+  margin: auto;
+  border: 0;
 }
 
 .tablaAutochequeo {
-    margin: auto;
-    border: 0;
-    background-color: #CFD6D2;
-    border-radius: 10px;
+  margin: auto;
+  border: 0;
+  background-color: #cfd6d2;
+  border-radius: 10px;
 }
 </style>

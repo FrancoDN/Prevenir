@@ -63,7 +63,7 @@
                 alt="Ingreso"
                 class="btnRegistro"
                 id="signUp"
-                onclick="location.href='../signUp/signup.html'"
+                @click="navegar('registro')"
               />
             </td>
           </tr>
@@ -82,6 +82,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 
+
 export default {
   data() {
     return {
@@ -91,7 +92,13 @@ export default {
     };
   },
    methods:{
-        ...mapActions(['ingresoUsuario'])
+        ...mapActions(['ingresoUsuario']),
+
+        navegar() {
+          this.$router.push('/registro')
+        }
+
+
     },
     computed:{
         ...mapState(['error'])
