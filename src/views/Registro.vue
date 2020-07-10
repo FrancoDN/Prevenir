@@ -27,8 +27,13 @@
           class="loginFieldSignUp"
           v-model="$v.usuario.nombre.$model"
         />
+        <div v-if="$v.usuario.nombre.$dirty">
+          <p
+            class="error-message"
+            v-if="!$v.usuario.nombre.required"
+          >El campo nombre debe estar completo.</p>
+        </div>
       </div>
-
       <div>
         <input
           placeholder="Apellido"
@@ -36,44 +41,82 @@
           type="text"
           v-model="$v.usuario.apellido.$model"
         />
+        <div v-if="$v.usuario.apellido.$dirty">
+          <p
+            class="error-message"
+            v-if="!$v.usuario.apellido.required"
+          >El campo apellido debe estar completo.</p>
+        </div>
       </div>
 
       <div>
         <input
           placeholder="DNI"
           class="loginFieldSignUp"
-          type="text"
+          type="number"
           v-model="$v.usuario.dni.$model"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="8"
         />
+        <div v-if="$v.usuario.dni.$dirty">
+          <p class="error-message" v-if="!$v.usuario.dni.minLength">Ingrese un DNI valido.</p>
+          <p class="error-message" v-if="!$v.usuario.dni.required">El campo DNI debe estar completo.</p>
+        </div>
       </div>
 
       <div>
         <input
           placeholder="Email"
           class="loginFieldSignUp"
-          type="text"
+          type="email"
           v-model="$v.usuario.email.$model"
         />
+        <div v-if="$v.usuario.email.$dirty">
+          <p class="error-message" v-if="!$v.usuario.email.email">Debe ingresar un email valido.</p>
+          <p
+            class="error-message"
+            v-if="!$v.usuario.dni.required"
+          >El campo Email debe estar completo.</p>
+        </div>
       </div>
 
       <div>
         <input
           placeholder="Telefono"
           class="loginFieldSignUp"
-          type="text"
+          type="number"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="10"
           v-model="$v.usuario.telefono.$model"
         />
+        <div v-if="$v.usuario.telefono.$dirty">
+          <p class="error-message" v-if="!$v.usuario.telefono.minLength">Ingrese un teléfono valido.</p>
+          <p
+            class="error-message"
+            v-if="!$v.usuario.telefono.required"
+          >El campo Teléfono debe estar completo.</p>
+        </div>
       </div>
-
       <div>
         <input
           placeholder="Edad"
           class="loginFieldSignUp"
-          type="text"
+          type="number"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="2"
           v-model="$v.usuario.edad.$model"
         />
+        <div v-if="$v.usuario.edad.$dirty">
+          <p
+            class="error-message"
+            v-if="!$v.usuario.edad.minLength"
+          >Debe tener como mínimo 2 caracteres.</p>
+          <p
+            class="error-message"
+            v-if="!$v.usuario.edad.required"
+          >El campo Edad debe estar completo.</p>
+        </div>
       </div>
-
       <div>
         <input
           placeholder="Dirección"
@@ -81,15 +124,20 @@
           type="text"
           v-model="$v.usuario.direccion.$model"
         />
+        <div v-if="$v.usuario.direccion.$dirty">
+          <p
+            class="error-message"
+            v-if="!$v.usuario.direccion.required"
+          >El campo Dirección debe estar completo.</p>
+        </div>
       </div>
-
-      <div>
-        <input
-          placeholder="Sexo"
-          class="loginFieldSignUp"
-          type="text"
-          v-model="$v.usuario.sexo.$model"
-        />
+      <br />
+      <div class="sepa">
+        <input type="radio" id="masculino" value="Masculino" v-model="$v.usuario.sexo.$model" />
+        <label for="masculino">Masculino</label>
+        <br />
+        <input type="radio" id="femenino" value="Femenino" v-model="$v.usuario.sexo.$model" />
+        <label for="femenino" class="textStyle">Femenino</label>
       </div>
       <br />
       <table width="150" height="60" class="tabla">
@@ -97,7 +145,7 @@
           <tr>
             <td>
               <button
-                :class="$v.usuario.$invalid ? 'btnSignUpDisabled' : 'btnSignUp' "
+                :class="$v.usuario.$invalid ? 'btnSignUpDisabled' : 'btnSignUp'"
                 :disabled="$v.usuario.$invalid"
                 type="submit"
                 alt="Ingreso"
@@ -114,7 +162,13 @@
 <script>
 import { auth, db } from "../firebase";
 import { mapActions, mapState } from "vuex";
-import { required, minLength } from "vuelidate/lib/validators";
+import {
+  required,
+  minLength,
+  email,
+  numeric,
+  alpha
+} from "vuelidate/lib/validators";
 
 export default {
   data() {
@@ -127,8 +181,8 @@ export default {
         telefono: "",
         edad: "",
         direccion: "",
-        sexo: "",
-      },
+        sexo: ""
+      }
     };
   },
 
@@ -137,7 +191,7 @@ export default {
       console.log(usuario);
       auth
         .createUserWithEmailAndPassword(usuario.email, usuario.dni)
-        .then((resp) => {
+        .then(resp => {
           const uuid = resp.user.uid;
           db.ref("Personas")
             .child(uuid)
@@ -145,7 +199,7 @@ export default {
         });
     },
 
-    ...mapActions(["crearUsuario"]),
+    ...mapActions(["crearUsuario"])
   },
 
   validations: {
@@ -153,36 +207,63 @@ export default {
       nombre: {
         required,
         mixins: 3,
+        alpha
       },
       apellido: {
         required,
         mixins: 3,
+        alpha
       },
       dni: {
         required,
-        minLength: minLength(4),
+        minLength: minLength(8),
+        numeric
       },
       email: {
         required,
+        email
       },
       telefono: {
         required,
-        minLength: minLength(4),
+        minLength: minLength(10),
+        numeric
       },
       edad: {
         required,
         minLength: minLength(2),
+        numeric
       },
       direccion: {
-        required,
+        required
       },
-      sexo: {},
-    },
-  },
+      sexo: {
+        required
+      }
+    }
+  }
 };
 </script>
 
 <style>
+.sepa {
+  margin-left: 15px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.error-message {
+  color: red;
+  font-family: "Montserrat";
+  src: url(https://prevenir.net.ar/assets/fonts/Montserrat/Montserrat-Black.ttf);
+  margin: auto;
+  text-align: center;
+  font-weight: 450;
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
+  font-size: 10px;
+}
 .btnAutochequeoFormu {
   margin-top: 10px;
   margin-bottom: 16px;
@@ -196,13 +277,17 @@ export default {
 
 /*  reemplazar esta clase*/
 .btnSignUpDisabled {
-   margin: 0;
-   background-color: green;
-   width: 100%;
-   height: 70%;
-   border: none;
-   outline: transparent;
-   border: transparent;
+  margin: 0;
+  background-image: url(/assets/images/Registro/enviar_disabled.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: transparent;
+  border: transparent;
 }
 
 .btnSignUp {

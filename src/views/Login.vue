@@ -14,8 +14,8 @@
 
       <div class="container">
         <div>
-          <a
-            ><input
+          <a>
+            <input
               required
               type="email"
               id="email"
@@ -23,12 +23,13 @@
               class="loginFieldSignUp"
               placeholder="Email"
               v-model="email"
-          /></a>
+            />
+          </a>
         </div>
 
         <div>
-          <a
-            ><input
+          <a>
+            <input
               required
               type="number"
               id="dni"
@@ -38,15 +39,16 @@
               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
               maxlength="8"
               v-model="dni"
-          /></a>
+            />
+          </a>
         </div>
       </div>
-
-      <table width="206" height="77" class="tabla">
+      <br />
+      <table width="206" height="70" class="tabla">
         <tbody>
           <tr>
             <td>
-              <input type="submit" alt="Ingreso" class="btnIngreso" value="" />
+              <input type="submit" alt="Ingreso" class="btnIngreso" value />
             </td>
           </tr>
         </tbody>
@@ -54,7 +56,7 @@
       <br />
       <p class="text-center">¿No estás registrado?</p>
       <br />
-      <table width="248" height="77" class="tabla">
+      <table width="248" height="70" class="tabla">
         <tbody>
           <tr>
             <td>
@@ -71,44 +73,48 @@
       </table>
       <p class="text-centered">Al registrarse está aceptando los</p>
       <p class="text-centeredTerm">
-        <a href="/condiciones/condiciones.html"
-          ><b>Términos Y Condiciones.</b></a
-        >
+        <a href="">
+          <b>Términos Y Condiciones.</b>
+        </a>
       </p>
     </form>
   </div>
 </template>
 
 <script>
-//TODO: Mostrar error de inicio de sesion
-
 import { mapActions, mapState } from "vuex";
-
 
 export default {
   data() {
     return {
       img: "../../public/assets/imagenes/Head chico.png",
       email: "",
-      dni: "",
+      dni: ""
     };
   },
-   methods:{
-        ...mapActions(['ingresoUsuario']),
-
-        navegar() {
-          this.$router.push('/registro')
-        }
-
-
+  methods: {
+    navegar(destino) {
+      this.$router.push(destino);
     },
-    computed:{
-        ...mapState(['error'])
+
+    ...mapActions(["ingresoUsuario"]),
+
+    navegar() {
+      this.$router.push("/registro");
     }
+  },
+  computed: {
+    ...mapState(["error"])
+  }
 };
 </script>
 
 <style>
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
 .container {
   align-content: center;
   margin: auto;
