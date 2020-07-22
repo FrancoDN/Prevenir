@@ -25,6 +25,7 @@
               v-model="email"
             />
           </a>
+          <template slot="prepend"><icon name="account" type="svg"></icon></template>
         </div>
 
         <div>
@@ -83,6 +84,8 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import Vue from 'vue'
+
 
 export default {
   data() {

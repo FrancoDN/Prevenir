@@ -11,6 +11,7 @@ import ResultadoPosi from '../views/ResultadoPosi.vue'
 import ResultadoNega from '../views/ResultadoNega.vue'
 import ResultadoEsen from '../views/ResultadoEsen.vue'
 import Condiciones from '../views/Condiciones.vue'
+import Compartir from '../views/Compartir.vue'
 
 import {auth} from '../firebase'
 
@@ -83,6 +84,11 @@ Vue.use(VueRouter)
     path: '/condiciones',
     name: 'Codiciones',
     component: Condiciones
+  },
+  {
+    path: '/compartir',
+    name: 'Compartir',
+    component: Compartir
   }
   //{
   //  path: '/autochequeo',

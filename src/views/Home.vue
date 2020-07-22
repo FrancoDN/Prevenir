@@ -71,7 +71,7 @@
               alt="Share"
               class="btnShare"
               id="share"
-              @click="navegar('condiciones')"
+              @click="navegar('compartir')"
             />
           </td>
         </tr>

@@ -106,6 +106,13 @@ export default new Vuex.Store({
       
     },
 
+    guardarApp({commit}) {
+      Swal.fire({
+        title:'<u>Prevenir Berisso</u>',
+        text: ''
+      });
+    },
+
     detectarUsuario({ commit }, usuario) {
       commit("setUsuario", usuario);
     },
