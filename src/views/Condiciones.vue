@@ -15,20 +15,17 @@
       />
     </div>
     <div class="containerCondiciones">
-      <p>
-        [Previo al formulario de registro insertar la leyenda: “Este formulario
-        tiene carácter de declaración jurada. Hacer una falsa declaración es
-        considerada una contravención grave.” para que el usuario la acepte.]
-      </p>
+      <p> "Éste formulario tiene carácter de declaración jurada.Hacer una falsa declaración es considerada una contravención grave.”
+        para que el usuario la acepte.""</p>
 
       <p class="titulo">Términos y Condiciones</p>
       <p>
-        presentes términos y condiciones (en adelante, los “Términos y
+        Los presentes términos y condiciones (en adelante, los “Términos y
         Condiciones”) rigen la relación entre la Secretaría de Salud de la
         Municipalidad de Berisso (en adelante, la “Secretaría”) y los usuarios
-        (en adelante, los “Usuarios”) de la aplicación denominada “__________” ,
-        que podrá descargarse de las tiendas de aplicaciones oficiales de
-        Android e iOS (???) (en adelante, la “Aplicación”). El ingreso del
+        (en adelante, los “Usuarios”) de la aplicación denominada "PREVENIR Berisso” ,
+        que podrá descargarse de la tienda de aplicaciones oficiales de
+        Android y a través de Web para iOS (en adelante, la “Aplicación”). El ingreso del
         Usuario en la Aplicación implica la aceptación inmediata y sin reserva
         de los presentes Términos y Condiciones. En consecuencia, el Usuario
         manifiesta haber leído y aceptado en su totalidad los Términos y
@@ -79,7 +76,7 @@
       </p>
       <p>
         2.2. Para utilizar la Aplicación los Usuarios deberán ingresar con
-        número de DNI y trámite (???), siguiendo el procedimiento que se detalla
+        número de DNI y correo electrónico, siguiendo el procedimiento que se detalla
         en la Aplicación y aceptar los Términos y Condiciones.
       </p>
       <p>
@@ -362,7 +359,15 @@
       </p>
       <p></p>
       <p class="numerito">12. Legislación aplicable y jurisdicción</p>
+      <p>
+        12.1. A todos los efectos legales en relación a la Aplicación, será aplicable la legislación
+        vigente en la República Argentina. 12.2. Cualquier controversia que se suscite entre las
+        partes con relación a estos Términos y Condiciones, su existencia, validez, calificación,
+        interpretación, alcance, cumplimiento o resolución, se resolverá definitiva y
+        exclusivamente por los Tribunales Ordinarios del Departamento Judicial de La Plata.
+      </p>
     </div>
+    <!--TODO: Queda arreglar el redireccionamiento al home, arriba y abajo.-->
     <div style="padding:3vw; margin: auto;">
       <input
         type="button"

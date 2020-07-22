@@ -74,6 +74,7 @@
       </table>
       <p class="text-centered">Al registrarse está aceptando los</p>
       <p class="text-centeredTerm">
+        <!--TODO:Agregar redirección a terminos y condiciones-->
         <a href="">
           <b>Términos Y Condiciones.</b>
         </a>
