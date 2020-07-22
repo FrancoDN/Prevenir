@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="color-scheme" content="light"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#6CC9F2" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#6CC9F2" />
 
+    <!--Librerias-->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -21,6 +23,7 @@
       crossorigin=""
     ></script>
     <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -32,6 +35,7 @@
       rel="stylesheet"
     />
 
+    <!--Splash screen iOS-->
     <link
       href="/public/splash/apple_splash_2048.png"
       sizes="2048x2732"
@@ -68,6 +72,7 @@
       rel="apple-touch-startup-image"
     />
 
+    <!--Icono App-->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -107,6 +112,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <title>Prevenir</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -124,19 +130,5 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script>
-    // Detects if device is on iOS
-    const isIos = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /iphone|ipad|ipod/.test(userAgent);
-    };
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () =>
-      "standalone" in window.navigator && window.navigator.standalone;
-
-    // Checks if should display install popup notification:
-    if (isIos() && !isInStandaloneMode()) {
-      this.setState({ showInstallMessage: true });
-    }
-  </script>
+ 
 </html>

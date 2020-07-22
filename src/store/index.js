@@ -17,7 +17,6 @@ export default new Vuex.Store({
     // Para actualizar el userUID
     setUserUid(state, payload) {
       state.userUid = payload;
-      console.log(state.userUid);
     },
 
     setUsuario(state, payload) {
@@ -109,7 +108,13 @@ export default new Vuex.Store({
     guardarApp({commit}) {
       Swal.fire({
         title:'<u>Prevenir Berisso</u>',
-        text: ''
+        text: '',
+        html: '<br>'+
+        '<b>Safari: </b>'+
+        '<a>Debe presionar en el icono de </a>'+
+        '<b>Compartir </b>' +
+        '<a>ubicado en la parte inferior central de su navegador, y luego seleccione </a>'+
+        '<b>Agregar a Inicio</b>'
       });
     },
 

@@ -244,9 +244,16 @@ export default {
       Swal.fire({
         title: "Prevenir Berisso",
         html:
-          "-Personal de salud" +
-          "\n\n" +
-          "-Policia\n-Bomberos\n-Cuidador de personas mayores\n-Personas mayores de 60 años",
+          '<p align="left">-Personal de salud</p>' +
+
+          '<p align="left">-Policia</p>'+
+         
+          '<p align="left">-Bomberos</p>'+
+         
+          '<p align="left">-Cuidador de personas mayores</p>'+
+        
+          '<p align="left">-Personas mayores de 60 años</p>',
+
         icon: "info"
       });
     },

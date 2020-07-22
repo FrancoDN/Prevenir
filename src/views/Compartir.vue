@@ -7,6 +7,7 @@
       width="100%"
       height="100%"
     />
+    <br><br>
     <p class="text-share">Compartí la aplicación escaneando el código QR!</p>
     <div class="divQR">
       <img
@@ -17,28 +18,42 @@
         height="100%"
       />
     </div>
-    <table width="300" height="100" class="tabla">
-      <tbody>
-        <tr>
-          <td>
-            <input
-              class="btnSave"
-              type="button"
-              alt="Share"
-              id="share"
-              @click="guardarApp()"
-            />
-          </td>
-        </tr>
-      </tbody>
+    <div v-if="sistemaOperativo">
+      <Instalar />
+    </div>
+    <table width="130" height="40" class="tabla">
+        <tbody>
+            <tr>
+                <td>
+                    <input 
+                        type="button" 
+                        alt="Menu" 
+                        class="btnMenu" 
+                        @click="$router.push('/')"
+                    >
+                </td>
+            </tr>
+        </tbody>
     </table>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
+import Compartir from '../views/Compartir.vue'
+import Instalar from "../components/Instalar.vue"
 
 export default {
+
+  data() {
+    return {
+      sistemaOperativo: false
+    }
+  },
+  components: {
+    Instalar
+  },
+
   methods: {
     navegar(destino) {
       this.$router.push(destino);
@@ -46,6 +61,12 @@ export default {
 
     ...mapActions(["guardarApp"]),
   },
+
+   mounted() {
+    // Nos fijamos si el SO es Mac
+    this.sistemaOperativo = navigator.appVersion.indexOf("Mac")!=-1;
+    //console.log(this.sistemaOperativo);
+  }
 };
 </script>
 

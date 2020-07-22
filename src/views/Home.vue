@@ -77,13 +77,22 @@
         </tr>
       </tbody>
     </table>
+
+    
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
 
+
 export default {
+  
+  data() {
+    return {
+      sistemaOperativo: false
+    }
+  },
   methods: {
     navegar(destino) {
       this.$router.push(destino);
@@ -91,6 +100,12 @@ export default {
     
     ...mapActions(["cerrarSesion"])
   },
+
+  mounted() {
+    // Nos fijamos si el SO es Mac
+    this.sistemaOperativo = navigator.appVersion.indexOf("Mac")!=-1;
+    //console.log(this.sistemaOperativo);
+  }
 };
 </script>
 

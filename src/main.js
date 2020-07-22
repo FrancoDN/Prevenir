@@ -11,7 +11,8 @@ import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)
 
 auth.onAuthStateChanged(user => {
-    
+  
+  
   if(user){
     // console.log(user)
     const detectoUsuario = {
