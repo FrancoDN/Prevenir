@@ -99,7 +99,7 @@ export default {
   mounted() {
         //do we support geolocation
         if (!("geolocation" in navigator)) {
-          this.errorStr = "Geolocation is not available.";
+          this.errorStr = "La geolocalización no esta habilitada";
           return;
         }
         // get position
@@ -117,7 +117,7 @@ export default {
       updated() {
         //do we support geolocation
         if (!("geolocation" in navigator)) {
-          this.errorStr = "Geolocation is not available.";
+          this.errorStr = "La geolocalización no esta habilitada";
           return;
         }
         // get position
