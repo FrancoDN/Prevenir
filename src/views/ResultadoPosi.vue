@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="button" alt="Unidades" class="btnUnidades" />
+            <input type="button" alt="Unidades" class="btnUnidades" @click="navegar('/mapas')" />
           </td>
           <td>
             <a href="tel:148">
@@ -35,7 +35,7 @@
         <tr>
           <td>
             <a href="tel:107">
-              <input type="button" alt="Same" class="btnSame" />
+              <input type="button" alt="Same" class="btnSame"  />
             </a>
           </td>
         </tr>

@@ -12,6 +12,7 @@ import ResultadoNega from '../views/ResultadoNega.vue'
 import ResultadoEsen from '../views/ResultadoEsen.vue'
 import Condiciones from '../views/Condiciones.vue'
 import Compartir from '../views/Compartir.vue'
+import Mapas from '../views/Mapas.vue'
 
 import {auth} from '../firebase'
 
@@ -89,6 +90,11 @@ Vue.use(VueRouter)
     path: '/compartir',
     name: 'Compartir',
     component: Compartir
+  },
+  {
+    path: '/mapas',
+    name: 'Mapas',
+    component: Mapas
   }
   //{
   //  path: '/autochequeo',
