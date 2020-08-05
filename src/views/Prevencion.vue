@@ -115,15 +115,7 @@ export default {
     border: transparent;
 }
 
-.btnMenu:hover {
-    margin: 0;
-    background-color: transparent;
-    width: 60%;
-    height: 60%;
-    border: none;
-    outline: transparent;
-    border: transparent;
-}
+
 .tabla {
     margin: auto;
     border: 0;

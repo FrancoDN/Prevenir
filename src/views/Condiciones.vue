@@ -15,8 +15,8 @@
       />
     </div>
     <div class="containerCondiciones">
-      <p> "Éste formulario tiene carácter de declaración jurada.Hacer una falsa declaración es considerada una contravención grave.”
-        para que el usuario la acepte.""</p>
+      <p> " Éste formulario tiene carácter de declaración jurada.Hacer una falsa declaración es considerada una contravención grave.”
+        para que el usuario la acepte. "</p>
 
       <p class="titulo">Términos y Condiciones</p>
       <p>
@@ -421,7 +421,6 @@ export default {};
   width: 40vw;
   background-color: transparent;
   border: none;
-  cursor: pointer;
   max-width: 400px;
 }
 </style>

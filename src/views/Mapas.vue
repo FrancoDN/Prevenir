@@ -1,6 +1,28 @@
 <template>
   <div >
-    <l-map :zoom="zoom" :center="center" style="height: 850px; width: auto">
+     <img
+      class="bannerEmer"
+      src="../../public/assets/images/Web/Head_chicoWeb.png"
+      alt="berisso banner"
+    />
+    <br><br>
+    <table width="70" height="30" class="tabla">
+      <tbody>
+        <tr>
+          <td>
+            <input
+              type="button"
+              alt="Menu"
+              class="btnMenu"
+              @click="$router.push('/')"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="height: 200px, width: 300px">
+    <l-map :zoom="zoom" :center="center" style="height: 790px; width: auto">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker :lat-lng="center">
         <l-icon :icon-url="iconU" :icon-size="iconSizeU"></l-icon>
@@ -47,6 +69,7 @@
         <l-popup content="Unidad Sanitaria 42"></l-popup>
       </l-marker> 
     </l-map>
+    </div>
   </div>
 </template>
 

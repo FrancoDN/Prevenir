@@ -10,8 +10,8 @@
     </p>
     <br />
     <p class="text-centerPosi">
-      En caso de presentar síntomas comuniquese lo más pronto posible con el
-      número 148 o SAME.
+      En caso de presentar síntomas comuniquese lo más pronto posible con SAME 
+      o con el 148.
     </p>
     <table width="320" height="90" class="tabla">
       <tbody>
@@ -44,7 +44,7 @@
             />
           </td>
           <td>
-            <input type="button" alt="Menu" class="btnMenu" @click="navegar('/home')" />
+            <input type="button" alt="Menu" class="btnMenu" @click="navegar('/')" />
           </td>
         </tr>
       </tbody>
@@ -94,15 +94,7 @@ export default {
   border: transparent;
 }
 
-.btnUnidades:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
+
 .btn148 {
   margin: 0;
   background-image: url(/assets/images/Auto_positivo/LINEA148.png);
@@ -117,15 +109,7 @@ export default {
   border: transparent;
 }
 
-.btn148:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
+
 
 .btnCorregir {
   margin: 0;
@@ -141,15 +125,6 @@ export default {
   border: transparent;
 }
 
-.btnCorregir:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
 
 .btnMenu {
   margin: 0;
@@ -165,24 +140,7 @@ export default {
   border: transparent;
 }
 
-.btnMenu:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
-.btnUnidades:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
+
 
 .btnSame {
   margin: 0;
@@ -198,13 +156,4 @@ export default {
   border: transparent;
 }
 
-.btnSame:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
 </style>

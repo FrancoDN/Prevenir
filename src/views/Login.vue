@@ -74,10 +74,11 @@
       </table>
       <p class="text-centered">Al registrarse está aceptando los</p>
       <p class="text-centeredTerm">
-        <!--TODO:Agregar redirección a terminos y condiciones-->
-        <a href="">
-          <b>Términos Y Condiciones.</b>
-        </a>
+        <span>
+           <router-link to="/condiciones">
+            <b>Términos Y Condiciones.</b>
+           </router-link>
+        </span>
       </p>
     </form>
   </div>
@@ -154,16 +155,6 @@ export default {
   border: transparent;
 }
 
-.btnIngreso:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
-
 .btnRegistro {
   margin: 0;
   background-image: url(/assets/images/Inicio/REGISTRO.png);
@@ -175,16 +166,6 @@ export default {
   height: 70%;
   outline: none;
   border: none;
-}
-
-.btnRegistro:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
 }
 
 .text-centered {

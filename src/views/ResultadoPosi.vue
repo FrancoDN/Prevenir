@@ -8,7 +8,7 @@
     <br />
     <br />
     <p class="text-centerPosi">
-      Debémos realizarte un isopado por prevención. Podes llamar al 148 o
+      Debémos realizarte un isopado por prevención. Podes llamar al 107 o
       acercarte a la Unidad Sanitaria más cercana a tu ubicación.
     </p>
     <table width="320" height="90" class="tabla">
@@ -18,24 +18,23 @@
             <input type="button" alt="Unidades" class="btnUnidades" @click="navegar('/mapas')" />
           </td>
           <td>
-            <a href="tel:148">
-              <input type="button" alt="Linea148" class="btn148" />
+            <a href="tel:107">
+              <input type="button" alt="Same" class="btnSame" />
             </a>
           </td>
         </tr>
       </tbody>
     </table>
     <p class="text-centerPosi">
-      En caso de no contar con vehiculo personal, por favor comunicarse
-      directamente al número 107
+      También podes comunicarte directamente con la linea 148
     </p>
     <br />
     <table height="40" class="tabla">
       <tbody>
         <tr>
           <td>
-            <a href="tel:107">
-              <input type="button" alt="Same" class="btnSame"  />
+            <a href="tel:148">
+              <input type="button" alt="Linea148" class="btn148"  />
             </a>
           </td>
         </tr>
@@ -55,7 +54,7 @@
             />
           </td>
           <td>
-            <input type="button" alt="Menu" class="btnMenu" @click="navegar('/home')" />
+            <input type="button" alt="Menu" class="btnMenu" @click="navegar('/')" />
           </td>
         </tr>
       </tbody>
@@ -105,15 +104,6 @@ export default {
   border: transparent;
 }
 
-.btnUnidades:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
 .btn148 {
   margin: 0;
   background-image: url(/assets/images/Auto_positivo/LINEA148.png);
@@ -128,15 +118,6 @@ export default {
   border: transparent;
 }
 
-.btn148:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
 
 .btnCorregir {
   margin: 0;
@@ -152,15 +133,6 @@ export default {
   border: transparent;
 }
 
-.btnCorregir:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
 
 .btnMenu {
   margin: 0;
@@ -176,24 +148,7 @@ export default {
   border: transparent;
 }
 
-.btnMenu:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
-.btnUnidades:hover {
-  margin: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 60%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
+
 
 .btnSame {
   margin: 0;
@@ -201,16 +156,6 @@ export default {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: transparent;
-  border: transparent;
-}
-
-.btnSame:hover {
-  margin: 0;
   background-color: transparent;
   width: 100%;
   height: 100%;

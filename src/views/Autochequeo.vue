@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <img
       class="banner"
@@ -206,7 +207,7 @@
       </tbody>
     </table>
     <br />
-    <table width="100" height="30" class="tabla">
+    <table width="100" height="40" class="tabla">
       <tbody>
         <tr>
           <td>
@@ -242,7 +243,7 @@ export default {
   methods: {
     alerta() {
       Swal.fire({
-        title: "Prevenir Berisso",
+        title: "Esencial-Riesgo",
         html:
           '<p align="left">-Personal de salud</p>' +
 
@@ -309,6 +310,7 @@ export default {
     evaluacionNoEsenciales(respuesta) {
       let contador = 0;
 
+
       // Suma uno por cada uno que dice SI
       if (respuesta.Fiebre === "Si") contador++;
       if (respuesta.Dolor_de_garganta === "Si") contador++;
@@ -341,6 +343,13 @@ export default {
       }
 
       const userUid = await auth.onAuthStateChanged(function(user) {
+
+        //TODO: Falta enviar fecha de ingreso
+    // <---------------------------------------------------------------------------------------->
+        var f = new Date();
+        var Fecha = "0" + f.getDate() + "/" + "0" + (f.getMonth() +1) + "/" + f.getFullYear();
+    // <---------------------------------------------------------------------------------------->
+
         if (user) {
           db.ref("Personas")
             .child(user.uid)
