@@ -11,7 +11,7 @@ export default new Vuex.Store({
   state: {
     usuario: null,
     error: null,
-    userUid: "",
+    userUid: ""
   },
   mutations: {
     // Para actualizar el userUID
@@ -24,9 +24,10 @@ export default new Vuex.Store({
     },
     setError(state, payload) {
       state.error = payload;
-    },
+    }
   },
   actions: {
+
     crearUsuario({ commit }, usuario) {
       auth
         .createUserWithEmailAndPassword(usuario.email, usuario.dni)

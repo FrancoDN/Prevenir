@@ -333,6 +333,25 @@ export default {
       return (this.preguntas.Caso_sospechoso = "No");
     },
 
+    calcularFecha() {
+      let dia = '';
+        let mes = '';
+    
+        if( Number(new Date().getDate()) < 10  ){
+          dia = `0${new Date().getDate()}`
+        }else {
+          dia = `${new Date().getDate()}`
+        }
+
+        if(Number(new Date().getMonth() +1 ) < 10){
+          mes = `0${new Date().getMonth()+1}`
+        }else{
+          mes = `${new Date().getMonth()+1}`
+        }
+       
+        return `${dia}/${mes}/${new Date().getFullYear()}`;
+    },
+
     async enviarPreguntas(respuestas) {
       this.cambiarChecks();
 
@@ -342,13 +361,10 @@ export default {
         this.evaluacionNoEsenciales(respuestas);
       }
 
-      const userUid = await auth.onAuthStateChanged(function(user) {
+      // Agrego la fecha al objeto con las respuestas.
+      respuestas.Fecha = this.calcularFecha();
 
-        //TODO: Falta enviar fecha de ingreso
-    // <---------------------------------------------------------------------------------------->
-        var f = new Date();
-        var Fecha = "0" + f.getDate() + "/" + "0" + (f.getMonth() +1) + "/" + f.getFullYear();
-    // <---------------------------------------------------------------------------------------->
+      const userUid = await auth.onAuthStateChanged(function(user) {        
 
         if (user) {
           db.ref("Personas")

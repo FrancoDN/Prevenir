@@ -131,6 +131,39 @@
           >El campo Dirección debe estar completo.</p>
         </div>
       </div>
+        <select
+            class="loginFieldSignUp"
+            id="barrio"
+            name="barrio"
+            v-model="$v.usuario.barrio.$model" 
+          >
+            <option hidden selected value="">Seleccione su barrio</option>
+            <option value="Berisso Centro"  >Berisso Centro</option>
+            <option value="Villa Zula">Villa Zula</option>
+            <option value="Villa San Carlos">Villa San Carlos</option>
+            <option value="Villa Roca">Villa Roca</option>
+            <option value="Villa Progreso">Villa Progreso</option>
+            <option value="Villa Porteña">Villa Porteña</option>
+            <option value="Villa Nueva">Villa Nueva</option>
+            <option value="Villa Paula">Villa Paula</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+            <option value="Las 14">Las 14</option>
+            <option value="El Carmen">El Carmen</option>
+            <option value="Villa Dolores">Villa Dolores</option>
+            <option value="Barrio Obrero">Barrio Obrero</option>
+            <option value="Villa Arguello">Villa Argüello</option>
+            <option value="Juan B. Justo">Juan B. Justo</option>
+            <option value="Trabajadores de la Carne">Trabajadores de la Carne</option>
+            <option value="Banco Provincia">Banco Provincia</option>
+            <option value="Santa Teresita">Santa Teresita</option>
+            <option value="Alto los Talas">Alto los Talas</option>
+            <option value="Nueva York">Nueva York</option>
+            <option value="Solidaridad">Solidaridad</option>
+            <option value="Villa Roca">Villa Roca</option>
+            <option value="Barrio Universitario">Barrio Universitario</option>
+
+          </select>
+      <br>
       <br />
       <div class="sepa">
         <input type="radio" id="masculino" value="Masculino" v-model="$v.usuario.sexo.$model" />
@@ -181,7 +214,8 @@ export default {
         telefono: "",
         edad: "",
         direccion: "",
-        sexo: ""
+        sexo: "",
+        barrio: ""
       }
     };
   },
@@ -205,14 +239,10 @@ export default {
   validations: {
     usuario: {
       nombre: {
-        required,
-        mixins: 3,
-        alpha
+        required
       },
       apellido: {
-        required,
-        mixins: 3,
-        alpha
+        required
       },
       dni: {
         required,
@@ -237,6 +267,9 @@ export default {
         required
       },
       sexo: {
+        required
+      },
+      barrio: {
         required
       }
     }

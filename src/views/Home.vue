@@ -77,36 +77,63 @@
         </tr>
       </tbody>
     </table>
+    <!-- <span>{{name}}</span>
+     <button @click="getName">apreta</button> -->
+  </div>
 
     
-  </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
+import { auth, db } from "../firebase";
 
 
 export default {
   
   data() {
     return {
-      sistemaOperativo: false
+      sistemaOperativo: false,
+      // name: ''
+      
     }
   },
+
   methods: {
     navegar(destino) {
       this.$router.push(destino);
     },
-    
-    ...mapActions(["cerrarSesion"])
-  },
 
-  mounted() {
+    // getName: function(){
+    //   var vueInstance = this;
+    //   var userId = auth.currentUser.uid;
+    //   return db.ref('Personas' + userId).on('value', function(snapshot){
+    //     this.name = snapshot.val().nombre;
+    //      vueInstance.$set(vueInstance, 'name', name);
+    //      console.log('Nombre:', name)
+    //   },2000);
+    // },
+
+
+    ...mapActions(["cerrarSesion"])
+  
+},
+  async mounted() {
     // Nos fijamos si el SO es Mac
     this.sistemaOperativo = navigator.appVersion.indexOf("Mac")!=-1;
-    //console.log(this.sistemaOperativo);
+
+    // let user = auth.currentUser;
+    // user = user.uid;
+
+    // //this.nombre = -----
+  },
+
+  computed: {
+    ...mapState(['usuario'])
   }
 };
+
+auth
 </script>
 
 <style>

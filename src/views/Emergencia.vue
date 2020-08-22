@@ -51,14 +51,14 @@
             style="background-image: url(/assets/images/Llamadas/SAME.png);"
         /></a>
 
-        <a href="tel:100"
+        <a href="tel:+5492214612425"
           ><input
             type="button"
             class="botonllamar"
             style="background-image: url(/assets/images/Llamadas/Bomberos.png);"
         /></a>
 
-        <a href="tel:147"
+        <a href="tel:+5492216567873"
           ><input
             type="button"
             class="botonllamar"
