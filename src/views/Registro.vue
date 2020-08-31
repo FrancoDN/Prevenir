@@ -122,12 +122,12 @@
           placeholder="Dirección"
           class="loginFieldSignUp"
           type="text"
-          v-model="$v.usuario.direccion.$model"
+          v-model="$v.usuario.direc.$model"
         />
-        <div v-if="$v.usuario.direccion.$dirty">
+        <div v-if="$v.usuario.direc.$dirty">
           <p
             class="error-message"
-            v-if="!$v.usuario.direccion.required"
+            v-if="!$v.usuario.direc.required"
           >El campo Dirección debe estar completo.</p>
         </div>
       </div>
@@ -213,7 +213,7 @@ export default {
         email: "",
         telefono: "",
         edad: "",
-        direccion: "",
+        direc: "",
         sexo: "",
         barrio: ""
       }
@@ -222,7 +222,7 @@ export default {
 
   methods: {
     crearUsuario(usuario) {
-      console.log(usuario);
+      //console.log(usuario);
       auth
         .createUserWithEmailAndPassword(usuario.email, usuario.dni)
         .then(resp => {
@@ -263,7 +263,7 @@ export default {
         minLength: minLength(2),
         numeric
       },
-      direccion: {
+      direc: {
         required
       },
       sexo: {
