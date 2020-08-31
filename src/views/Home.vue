@@ -78,7 +78,7 @@
       </tbody>
     </table>
     <!-- <span>{{name}}</span>
-     <button @click="getName">apreta</button> -->
+     <button @click="getName">apreta</button> Comentario -->
   </div>
 
     
